@@ -11,8 +11,6 @@
 
    
       <!--Card-->
-
-     @foreach($posts as $post)
 <div class="card testimonial-card">
 
     <!--Bacground color-->
@@ -35,10 +33,15 @@
        
         <hr>
         <!--Quotation-->
-        <p>{{ substr($post->body, 0, 250) }} {{ strlen($post->body) > 250 ? "..." : ""}}</p>
+        <p>{{ $post->body }}</p>
     </div>
     <div class="cardfooter">
-      <p><a href="{{ route('post.show', $post->id )}}" class="btn btn-default" role = "button">see more...</a></p>
+    <div class="group">
+          <input id="user" type="text" class="input" placeholder="comment here....">
+    </div>
+    <div class="buttonright">
+      <button class="btn btn-success">comment</button>
+    </div>
     </div>
    <div class="likebutton">
   <a href=""><span class="fa fa-heart-o" aria-hidden="true"></span></a>
@@ -48,14 +51,6 @@
 
    
 </div>
-@endforeach
-
-<div class="text-center">
-        {{ $posts->links() }}
- </div>
-
-
-
 
 <!--/.Card-->
     </div>

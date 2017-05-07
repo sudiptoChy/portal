@@ -42,7 +42,7 @@
        <div class="border">
     <ul class="nav navbar-nav">
              <li class="nav-item">
-                <a class="nav-link" href="#"><p>Home</p></a>
+                <a class="nav-link" href="{{route('posts.index') }}"><p>Home</p></a>
              </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><p>Bookmarks</p></a>
