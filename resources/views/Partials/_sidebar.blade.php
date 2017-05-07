@@ -21,7 +21,7 @@
       <li><a href="#">Java programmers are the most creative programmer.</a></li>
       </div>
        <div class="name">
-        <p>Jaber Ahmed</p>
+        <p>Sudipto Chowdhury</p>
       </div>
       </div>
        <div class="total">
@@ -32,7 +32,7 @@
       <li><a href="#">Descrete Mathematics is the father of programming.</a></li>
       </div>
        <div class="name">
-        <p>Jaber Ahmed</p>
+        <p>Tajul Islam</p>
       </div>
       </div>
        <div class="total">
@@ -40,10 +40,10 @@
         <a href="#"><img src="{{asset('images/mohsin.jpg')}}" class="img-circle" alt="images"></a>
       </div>
       <div class="rightname">
-      <li><a href="#">Data-Structure is more important for programmers or developers.</a></li>
+      <li><a href="#">Data-Structure is more important for programmers</a></li>
       </div>
        <div class="name">
-        <p>Jaber Ahmed</p>
+        <p>Mohsin Ahmed</p>
       </div>
       </div>
         <div class="total">
@@ -51,10 +51,10 @@
         <a href="#"><img src="{{asset('images/jaber.jpg')}}" class="img-circle" alt="images"></a>
       </div>
       <div class="rightname">
-      <li><a href="#">Data-Structure is more important for programmers or developers.</a></li>
+      <li><a href="#">Data-Structure is more important for programmers</a></li>
       </div>
        <div class="name">
-        <p>Jaber Ahmed</p>
+        <p>sabbir Ahmed</p>
       </div>
       </div>
       </ul>

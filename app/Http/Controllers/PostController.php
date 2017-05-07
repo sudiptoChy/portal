@@ -17,12 +17,12 @@ class PostController extends Controller
     public function index()
     {
         $posts = $this->post->latest()->paginate(5);
-    	return view('welcome')->with('posts', $posts);
+        return view('welcome')->with('posts', $posts);
     }
 
     public function show($id)
     {
     	$post = $this->post->find($id);
-    	return $post;
+    	return view('Post.show')->with('post', $post);
     }
 }
