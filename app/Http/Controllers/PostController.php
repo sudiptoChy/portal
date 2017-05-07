@@ -16,8 +16,8 @@ class PostController extends Controller
 
     public function index()
     {
-    	$posts = $this->post->all();
-    	return $posts;
+        $posts = $this->post->latest()->paginate(5);
+    	return view('welcome')->with('posts', $posts);
     }
 
     public function show($id)

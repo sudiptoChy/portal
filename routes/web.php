@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@index')->name('posts.index');
+
+//Home Page
+
+Route::get('/home-dip', 'PostController@index')->name('home-dip');
 
 // Post Routes
 Route::get('/posts', 'PostController@index')->name('posts.index');
