@@ -23,6 +23,7 @@
      <a href=""><h4 class="card-title">{{ $post->title }}</h4></a>
         <h5 class="author">Author: Jaber Ahmed</h5>
         <p class="time">{{ date('M j, Y h:i a', strtotime($post->created_at)) }}</p>
+        
     </div>
     </div>
 
@@ -38,7 +39,7 @@
         <p>{{ $post->body }}</p>
     </div>
     <div class="cardfooter">
-      <p><a href="post.html" class="btn btn-default" role = "button">see more...</a></p>
+      <p><a href="post.html" class="btn btn-primary" role = "button">see more...</a></p>
     </div>
    <div class="likebutton">
   <a href=""><span class="fa fa-heart-o" aria-hidden="true"></span></a>
