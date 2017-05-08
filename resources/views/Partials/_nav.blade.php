@@ -12,7 +12,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"> <p id="icon" style="font-size: 35px; color: white; height: 42px; width: 42px; line-height: 42px; border-radius: 13%; text-align: center; background-color: rgb#455A64;"> RP </p>  </a>
+      <a class="navbar-brand" href="{{ route('home') }}"> <p id="icon" style="font-size: 35px; color: white; height: 42px; width: 42px; line-height: 42px; border-radius: 13%; text-align: center; background-color: rgb#455A64;"> rP </p>  </a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
@@ -42,7 +42,7 @@
        <div class="border">
     <ul class="nav navbar-nav">
              <li class="nav-item">
-                <a class="nav-link" href="{{route('posts.index') }}"><p>Home</p></a>
+                <a class="nav-link" href="{{route('home') }}"><p>Home</p></a>
              </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><p>Bookmarks</p></a>

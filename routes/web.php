@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', 'PostController@index')->name('posts.index');
+Route::get('/', 'PostController@index')->name('home');
 
 //Home Page
 
 Route::get('/home-dip', 'PostController@index')->name('home-dip');
 
 // Post Routes
-Route::get('/posts', 'PostController@index')->name('posts.index');
+//Route::get('/posts', 'PostController@index')->name('posts.index');
 Route::get('/post/{id}', 'PostController@show')->name('post.show');
 
 // Category Routes
