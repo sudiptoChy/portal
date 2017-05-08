@@ -7,7 +7,7 @@
 
     <!-- Post Content -->
 
-    <div class="col-md-8">
+    <div class="col-md-10 col-md-offset-1">
 
    
       <!--Card-->
@@ -20,7 +20,11 @@
     <div class="right">
      <a href=""><h4 class="card-title">{{ $post->title }}</h4></a>
         <h5 class="author">Author: Jaber Ahmed</h5>
-        <p class="time">{{ date('M j, Y h:i a', strtotime($post->created_at)) }}</p>
+        @if ($post->created_at->diffInMonths(Carbon\Carbon::now()) >= 1)
+            <p class="time"> {{ $post->created_at->format('j M Y , g:ia') }} </p>
+        @else
+            <p class="time"> {{ $post->created_at->diffForHumans() }} </p>
+        @endif
     </div>
     </div>
 
@@ -56,8 +60,6 @@
     </div>
 
     <!-- Post Content End Here -->
-
-    @include('Partials._sidebar')
 
   </div>
   </div>
