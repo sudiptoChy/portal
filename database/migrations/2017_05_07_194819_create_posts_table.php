@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
               $table->string('title');
               $table->string('slug');
               $table->text('body');
+              $table->decimal('rating', 5, 2);
               $table->integer('user_id')->nullable()->unsigned();
               $table->integer('category_id')->nullable()->unsigned();
               $table->timestamps();
