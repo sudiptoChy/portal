@@ -13,9 +13,6 @@
 
 Route::get('/', 'PostController@getIndex')->name('home');
 
-//Home Page
-
-Route::get('/home-dip', 'PostController@getIndex')->name('home-dip');
 
 // Post Routes
 Route::get('/post/create', 'PostController@getCreate')->name('post.create');
