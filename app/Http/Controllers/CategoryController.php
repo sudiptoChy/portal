@@ -22,7 +22,7 @@ class CategoryController extends Controller
 
     public function getShow($id)
     {
-    	$category = $this->category->find($id);
-    	return $category;
+    	$category = $this->category->with('posts')->find($id);
+    	return view('Category.show')->with('category', $category);
     }
 }

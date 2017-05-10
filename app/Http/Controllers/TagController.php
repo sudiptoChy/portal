@@ -22,7 +22,7 @@ class TagController extends Controller
 
     public function getShow($id)
     {
-    	$tag = $this->tag->find($id);
-    	return $tag;
+    	$tag = $this->tag->with('posts')->find($id);
+    	return view('Tag.show')->with('tag', $tag);
     }
 }

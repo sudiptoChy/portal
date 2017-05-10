@@ -97,7 +97,7 @@
                 <h3>Catagories</h3>
                 <ul>
                   @foreach($categories as $category)
-                    <a href="{{ route('category.show', $category->id )}}"><li>{{ $category->name }}</li></a>
+                    <a href="{{ route('category.show', $category->id )}}"><li>{{ $category->name }} ({{ $category->posts()->count()}})</li></a>
                   @endforeach
                 </ul>
               </div>
@@ -108,7 +108,7 @@
                 <h3>Tags</h3>
                 <ul>
                   @foreach($tags as $tag)
-                    <a href="{{ route('tag.show', $tag->id )}}"><li>{{ $tag->name }}</li></a>
+                    <a href="{{ route('tag.show', $tag->id )}}"><li>{{ $tag->name }} ({{ $tag->posts()->count()}})</li></a>
                   @endforeach
                 </ul>
               </div>

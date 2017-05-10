@@ -55,6 +55,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="#"><p>About</p></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('post.create') }}"><p>Create Post</p></a>
+            </li>
         </ul>
          <!--Search form-->
         <!-- <form class="form-inline float-xs-left">
