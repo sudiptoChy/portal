@@ -352,7 +352,7 @@ h3{
 
 input, label {
     display: block;
-    width: 80px;
+    /*width: 80px;*/
 }
 
 input[type=file]::-webkit-file-upload-button {

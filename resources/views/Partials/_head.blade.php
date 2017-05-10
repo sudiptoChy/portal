@@ -16,5 +16,6 @@
     <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/project.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/select2.min.css')}}">
 
   </head>

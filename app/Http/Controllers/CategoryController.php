@@ -14,13 +14,13 @@ class CategoryController extends Controller
     	$this->category = $category;
     }
 
-    public function index()
+    public function getIndex()
     {
     	$categories = $this->category->all();
     	return $categories;
     }
 
-    public function show($id)
+    public function getShow($id)
     {
     	$category = $this->category->find($id);
     	return $category;

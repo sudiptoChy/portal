@@ -14,13 +14,13 @@ class TagController extends Controller
     	$this->tag = $tag;
     }
 
-    public function index()
+    public function getIndex()
     {
     	$tags = $this->tag->all();
     	return $tags;
     }
 
-    public function show($id)
+    public function getShow($id)
     {
     	$tag = $this->tag->find($id);
     	return $tag;
