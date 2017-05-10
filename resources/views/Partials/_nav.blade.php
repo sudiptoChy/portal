@@ -1,8 +1,6 @@
-  <body>
-    
 <!--Navbar-->
 
-    <nav class="navbar navbar-default navbar-fixed-top scrolling-navbar" id="header">
+<nav class="navbar navbar-default navbar-fixed-top scrolling-navbar" id="header">
     <div class="container">
         <!--Navbar Brand--> 
         <div class="navbar-header">
@@ -16,6 +14,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+        
           <li class="nav-item">
             <a id="show_login" class="nav-link waves-effect waves-light" href="login.html">
               <i class="fa fa-sign-in"></i>
@@ -56,6 +55,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="#"><p>About</p></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('post.create') }}"><p>Create Post</p></a>
+            </li>
         </ul>
          <!--Search form-->
         <!-- <form class="form-inline float-xs-left">
@@ -64,5 +67,5 @@
         </div>
         </div>
     </div>
-      </nav>
+</nav>
 <!--/.Navbar-->

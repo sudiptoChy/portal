@@ -11,20 +11,34 @@
 |
 */
 
-Route::get('/', 'PostController@index')->name('home');
+Route::get('/', 'PostController@getIndex')->name('home');
 
 //Home Page
 
-Route::get('/home-dip', 'PostController@index')->name('home-dip');
+Route::get('/home-dip', 'PostController@getIndex')->name('home-dip');
 
 // Post Routes
-//Route::get('/posts', 'PostController@index')->name('posts.index');
-Route::get('/post/{id}', 'PostController@show')->name('post.show');
+Route::get('/post/create', 'PostController@getCreate')->name('post.create');
+Route::post('/post/store', 'PostController@postCreate')->name('post.store');
+Route::get('/post/edit/{id}', 'PostController@getEdit')->name('post.edit');
+Route::post('post/update/{id}', 'PostController@postEdit')->name('post.update');
+Route::get('post/delete/{id}', 'PostController@getDelete')->name('post.delete');
+Route::get('/post/{id}', 'PostController@getShow')->name('post.show');
 
 // Category Routes
-Route::get('/categories', 'CategoryController@index')->name('categories.index');
-Route::get('/category/{id}', 'CategoryController@show')->name('category.show');
+Route::get('/categories', 'CategoryController@getIndex')->name('categories.index');
+Route::get('/category/{id}', 'CategoryController@getShow')->name('category.show');
+Route::get('/category/create', 'CategoryController@getCreate')->name('category.create');
+Route::post('/category/store', 'CategoryController@postCreate')->name('category.store');
+Route::get('/category/edit/{id}', 'CategoryController@getEdit')->name('category.edit');
+Route::post('/category/update/{id}', 'CategoryController@postEdit')->name('category.update');
+Route::get('/category/delete/{id}', 'CategoryController@getDelete')->name('category.delete');
 
 // Tag Routes
-Route::get('/tags', 'TagController@index')->name('tags.index');
-Route::get('/tag/{id}', 'TagController@show')->name('tag.show');
+Route::get('/tags', 'TagController@getIndex')->name('tags.index');
+Route::get('/tag/{id}', 'TagController@getShow')->name('tag.show');
+Route::get('/tag/create', 'TagController@getCreate')->name('tag.create');
+Route::post('/tag/store', 'TagController@postCreate')->name('tag.store');
+Route::get('/tag/edit/{id}', 'TagController@getEdit')->name('tag.edit');
+Route::post('/tag/update/{id}', 'TagController@postEdit')->name('tag.update');
+Route::get('/tag/delete/{id}', 'TagController@getDelete')->name('tag.delete');

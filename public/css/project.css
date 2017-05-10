@@ -212,7 +212,7 @@ h3{
 }
 
 .col-md-3 .contributor h3{
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
 	color: black;
 	border-bottom: 1px solid #999;
@@ -352,7 +352,7 @@ h3{
 
 input, label {
     display: block;
-    width: 80px;
+    /*width: 80px;*/
 }
 
 input[type=file]::-webkit-file-upload-button {

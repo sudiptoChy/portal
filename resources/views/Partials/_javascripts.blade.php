@@ -16,6 +16,10 @@
     <script type="text/javascript" src="{{asset('js/mdb.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 
+    <!-- Select2 javaScript -->
+    
+    <script type="text/javascript" src="{{asset('js/select2.min.js')}}"></script>
+
     <script>
       
       $(window).scroll(function(){
