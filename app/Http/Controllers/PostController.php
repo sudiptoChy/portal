@@ -79,16 +79,63 @@ class PostController extends Controller
 
     public function getEdit($id)
     {
+        $post = $this->post->find($id);
+        $categories = $this->category->all();
+        $tags = $this->tag->all();
 
+        $data = [
+            'post' => $post,
+            'categories' => $categories,
+            'tags' => $tags
+        ];
+        
+        return view('Post.edit')->with($data);
     }
 
-    public function postEdit($id)
+    public function postEdit(Request $request, $id)
     {
+        // Validating the request
 
+        $post = $this->post->find($id);
+
+        if($request->input('slug') == $post->slug)
+        {
+            $this->validate($request, array(
+              'title' => 'required|max:255',
+              'body'  => 'required',
+              'category_id' => 'required|integer'
+            ));
+        } else {
+            $this->validate($request, array(
+              'title' => 'required|max:255',
+              'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+              'category_id' => 'required|integer',
+              'body'  => 'required'
+            ));
+        }
+          
+      $post->title = $request->input('title');
+      $post->slug = $request->input('slug');
+      $post->category_id = $request->input('category_id');
+      $post->body = $request->input('body');
+      $post->save();
+
+      if (isset($request->tags)) {
+        $post->tags()->sync($request->tags);
+      } else {
+        $post->tags()->sync(array());
+      }
+      
+      // Redirect to another page
+
+      return redirect()->route('post.show', $post->id);
     }
 
     public function getDelete($id)
     {
-        
+        $post = $this->post->find($id);
+        $post->tags()->detach();
+        $post->delete();
+        return redirect()->route('home');
     }
 }
