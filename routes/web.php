@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', 'PostController@getIndex')->name('home');
+// Route for home
+
+Route::get('/', 'HomeController@getIndex')->name('home');
+
+
+// User Routes (testing)
+
+Route::get('/user', 'PostController@getIndex')->name('home.user');
 
 
 // Post Routes
