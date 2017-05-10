@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Category;
+use App\User;
 use Session;
 
 class PostController extends Controller
@@ -14,11 +15,12 @@ class PostController extends Controller
     private $category = null;
     private $tag = null;
 
-    public function __construct(Post $post, Category $category, Tag $tag)
+    public function __construct(Post $post, Category $category, Tag $tag, User $user)
     {
-    	$this->post = $post;
+    	  $this->post = $post;
         $this->category = $category;
         $this->tag = $tag;
+        $this->user = $user;
     }
 
     public function getIndex()
@@ -27,12 +29,14 @@ class PostController extends Controller
         $PostByRating = $this->post->orderBy('rating', 'DSC')->take(5)->get();
         $categories = $this->category->all();
         $tags = $this->tag->all();
+        $UserByRating = $this->user->orderBy('rating', 'DSC')->take(5)->get();
 
         $data = [
           'posts' => $posts,
           'tags' => $tags,
           'categories' => $categories,
-          'PostByRating' => $PostByRating
+          'PostByRating' => $PostByRating,
+          'UserByRating' => $UserByRating
         ];
 
         return view('welcome')->with($data);

@@ -22,7 +22,7 @@
 
                   <!--User image-->
                   <div class="avatar">
-                      <img src="{{asset('images/jaber1.JPG')}}" class="img-circle img-responsive">
+                      <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
                   </div>
 
                   <!--Post Body-->
@@ -62,7 +62,7 @@
                     @foreach($PostByRating as $post)
                       <div class="total">
                         <div class="leftimage">
-                          <a href="#"><img src="{{asset('images/jaber1.JPG')}}" class="img-circle" alt="images"></a>
+                          <a href="#"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"></a>
                         </div>
 
                         <div class="rightname">
@@ -81,14 +81,18 @@
 
               <div class="contributor">
                 <h3>Top Contributor</h3>
-                <div class="totalcontsection">
-                  <div class="leftimage">
-                    <a href=""><img src="{{asset('images/jaber1.JPG')}}" class="img-circle" alt="images"/></a>
-                  </div>
-                  <div class="rightname">
-                    <a href="#"><h4>Jaber Ahmed</h4></a>                   
-                  </div>
-                </div>
+                  <ul>
+                    @foreach($UserByRating as $user)
+                      <div class="totalcontsection">
+                        <div class="leftimage">
+                          <a href=""><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"/></a>
+                        </div>
+                        <div class="rightname">
+                          <h4><a href="#">{{ $user->name }}</a></h4>                
+                        </div>
+                      </div>
+                    @endforeach
+                  </ul>
               </div>
 
               <!-- Categories -->

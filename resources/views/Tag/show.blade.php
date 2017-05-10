@@ -22,7 +22,7 @@
 
                   <!--User image-->
                   <div class="avatar">
-                      <img src="{{asset('images/jaber1.JPG')}}" class="img-circle img-responsive">
+                      <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
                   </div>
 
                   <!--Post Body-->
