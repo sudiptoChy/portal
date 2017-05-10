@@ -26,11 +26,16 @@ class PostController extends Controller
         $posts = $this->post->latest()->paginate(5);
         $PostByRating = $this->post->orderBy('rating', 'DSC')->take(5)->get();
         $categories = $this->category->all();
+        $tags = $this->tag->all();
 
-        return view('welcome')
-                ->with('posts', $posts)
-                ->with('PostByRating', $PostByRating)
-                ->with('categories', $categories);
+        $data = [
+          'posts' => $posts,
+          'tags' => $tags,
+          'categories' => $categories,
+          'PostByRating' => $PostByRating
+        ];
+
+        return view('welcome')->with($data);
     }
 
     public function getShow($id)
@@ -54,7 +59,7 @@ class PostController extends Controller
         return view('Post.create')->with($data);
     }
 
-    public function postStore(Request $request)
+    public function postCreate(Request $request)
     {
 
         $this->validate($request, array(

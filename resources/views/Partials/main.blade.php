@@ -1,21 +1,25 @@
-@include('Partials._head')
-@include('Partials._nav')
+<!DOCTYPE html>
 
-  
-<div class="maincontent padding-top-130">
-    <div class="container">
-    <div class="row">
+<html lang="en">
 
-    @include('Partials._maincontent')
+	@include('Partials._head')
 
+	<body>
 
-    @include('Partials._sidebar')
+		@include('Partials._nav')
 
+			<div class="maincontent padding-top-130">
+				<div class="container">
 
-  </div>
-  </div>
-  </div>
+			    	@yield('content')
+			    	@include('Partials._footer')
 
-  @include('Partials._footer')
+				</div>
+			</div>
 
-    @include('Partials._javascripts')
+		@include('Partials._javascripts')
+		@yield('scriprs')
+
+	</body>
+
+</html>

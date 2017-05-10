@@ -1,3 +1,3 @@
 <div class="footer">
-    <p>&copy; copyright prohibited</p>
+    <p>&copy; 2017 Research portal Team</p>
  </div>
