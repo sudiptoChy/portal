@@ -55,6 +55,25 @@
               <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a>
           </div>        
       </div>
+
+      <div class="card1 card testimonial-card">
+
+    <div class="blockright card-block">
+    <div class="comment">
+      <p>Hello everyone.Hw r you all?</p>
+      <p>Hello everyone.Hw r you all?</p>
+      <p>Hello everyone.Hw r you all?</p>
+    </div>
+    </div>
+    <div class="cardfooter">
+    <div class="group">
+          <input id="user" type="text" class="input" placeholder="comment here....">
+    </div>
+    <div class="buttonright">
+      <button class="btn btn-success">comment</button>
+    </div>
+    </div>
+</div>
     </div>
   </div>
 

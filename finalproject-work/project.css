@@ -566,3 +566,9 @@ input[type=file]::-webkit-file-upload-button {
 	margin-right: -20px;
 }
 /*end the process of dropdown manu close*/
+
+.card-block .comment{
+
+	padding-top: 10px;
+	margin-left: 10px;
+}
