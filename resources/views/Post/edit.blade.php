@@ -21,10 +21,6 @@
 			          <label name="title">Title:</label>
 			          <input id="title" name="title" class="form-control" value="{{ $post->title }}">
 			        </div>
-			        <div class="form-group">
-			          <label name="title">Slug:</label>
-			          <input id="title" name="slug" class="form-control" value="{{ $post->slug }}">
-			        </div>
 
 			        <div class="form-group">
 			              <label name="title">Category:</label>
