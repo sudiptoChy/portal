@@ -10,8 +10,8 @@
               <div class="card testimonial-card">
                   <div class="card-up default-color-default">
                       <div class="right">
-                          <a href=""><h4 class="card-title">{{ $post->title }}</h4></a>
-                          <h5 class="author">Author: Jaber Ahmed</h5>
+                          <h4 class="card-title">{{ $post->title }}</h4>
+                          <a href="{{ route('user.show', $post->user_id) }}"><h5 class="author">Author: Jaber Ahmed</h5></a>
                           @if ($post->created_at->diffInMonths(Carbon\Carbon::now()) >= 1)
                           <p class="time"> {{ $post->created_at->format('j M Y , g:ia') }} </p>
                           @else
@@ -84,10 +84,10 @@
                     @foreach($UserByRating as $user)
                       <div class="totalcontsection">
                         <div class="leftimage">
-                          <a href=""><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"/></a>
+                          <a href="{{ route('user.show', $user->id) }}"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"/></a>
                         </div>
                         <div class="rightname">
-                          <h4><a href="#">{{ $user->name }}</a></h4>                
+                          <h4><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></h4>                
                         </div>
                       </div>
                     @endforeach
