@@ -32,7 +32,7 @@
                   </div>
 
                   <div class="cardfooter">
-                      <p><a href="{{ route('post.show', $post->id )}}" class="btn btn-default" role = "button">see more...</a></p>
+                      <p><a href="{{ route('post.show', $post->slug )}}" class="btn btn-default" role = "button">see more...</a></p>
                   </div>
 
                    <div class="likebutton">
