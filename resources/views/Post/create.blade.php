@@ -1,15 +1,26 @@
-@include('Partials._head')
-@include('Partials._nav')
+@extends('Partials.main')
 
-<div class="maincontent padding-top-130">
-    <div class="container">
+@section('title' , '| create post')
+
+@section('stylesheet')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>
+      tinymce.init({ 
+        selector:'textarea',
+        plugins: "link code fullscreen media emoticons insertdatetime",
+      });
+    </script>
+@endsection
+
+@section('content')
+
     <div class="row">
 
     <div class="col-md-12">
 
    		<h1> Create New Post </h1>
       <hr>
-          <form method="POST" action="{{ route('post.store') }}">
+          <form method="POST" action="{{ route('post.store') }}" enctype="multipart/form-data">
             <div class="form-group">
               <label name="title">Title:</label>
               <input id="title" name="title" class="form-control" required>
@@ -46,8 +57,13 @@
             </div>
 
             <div class="form-group">
+              <label name="feature-image"> Feature Image: </label>
+              <input type="file" name="feature-image">
+            </div>
+
+            <div class="form-group">
               <label name="body">Post Body:</label>
-              <textarea id="body" name="body" rows="10" class="form-control" required autofocus=""></textarea>
+              <textarea id="body" name="body" rows="10" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
@@ -58,13 +74,16 @@
 
     </div>
 
-    </div>
   </div>
-  </div>
+@endsection
 
+@section('scripts')
 
-@include('Partials._footer')
-@include('Partials._javascripts')
   <script type="text/javascript">
     $('.select2-multi').select2();
   </script>
+
+@endsection
+
+
+

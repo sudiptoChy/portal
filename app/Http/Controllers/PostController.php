@@ -8,6 +8,9 @@ use App\Models\Tag;
 use App\Models\Category;
 use App\User;
 use Session;
+use Purifier;
+use Image;
+use Storage;
 
 class PostController extends Controller
 {
@@ -70,7 +73,8 @@ class PostController extends Controller
           'title' => 'required|max:255',
           'slug' => 'required|alpha_dash|min:5|max:255',
           'category_id' => 'required|integer',
-          'body'  => 'required'
+          'body'  => 'required',
+          'feature-image' => 'sometimes|image'
         ));
 
         // Store in the database
@@ -78,12 +82,26 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = $request->slug;
         $post->category_id = $request->category_id;
-        $post->body = $request->body;
+        $post->body = Purifier::clean($request->input('body'), "youtube"); // Securing post body from malicious codes.
+
+        // Saving Featured Image
+
+        if($request->hasFile('feature-image')) {
+          $image = $request->file('feature-image');
+          $fileName = time() . '.' .$image->getClientOriginalExtension();
+          $location = public_path('images/'.$fileName);
+          Image::make($image)->resize(800, 400)->save($location);
+
+          $post->image = $fileName;
+        }
+
+
         $post->save();
         $post->tags()->sync($request->tags, false);
 
-      // Redirect to another page
-      return redirect()->route('home');
+        // Redirect to another page
+
+        return redirect()->route('home');
     }
 
     public function getEdit($id)
@@ -107,26 +125,33 @@ class PostController extends Controller
 
         $post = $this->post->find($id);
 
-        if($request->input('slug') == $post->slug)
-        {
-            $this->validate($request, array(
-              'title' => 'required|max:255',
-              'body'  => 'required',
-              'category_id' => 'required|integer'
-            ));
-        } else {
-            $this->validate($request, array(
-              'title' => 'required|max:255',
-              'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
-              'category_id' => 'required|integer',
-              'body'  => 'required'
-            ));
-        }
+          $this->validate($request, array(
+            'title' => 'required|max:255',
+            'slug' => "required|alpha_dash|min:5|max:255|unique:posts,slug,$id",
+            'category_id' => 'required|integer',
+            'body'  => 'required',
+            'feature-image' => 'image'
+          ));
           
       $post->title = $request->input('title');
       $post->slug = $request->input('slug');
       $post->category_id = $request->input('category_id');
-      $post->body = $request->input('body');
+      $post->body = Purifier::clean($request->input('body'), "youtube"); // Securing post body from malicious codes
+
+      if($request->hasFile('feature-image')) {
+          
+          $image = $request->file('feature-image');
+          $fileName = time() . '.' .$image->getClientOriginalExtension();
+          $location = public_path('images/'.$fileName);
+          Image::make($image)->resize(800, 400)->save($location);
+
+          $oldFileName = $post->image;
+
+          $post->image = $fileName;
+
+          Storage::delete($oldFileName);
+      }
+
       $post->save();
 
       if (isset($request->tags)) {
@@ -144,7 +169,10 @@ class PostController extends Controller
     {
         $post = $this->post->find($id);
         $post->tags()->detach();
+        Storage::delete($post->image);
+
         $post->delete();
+        
         return redirect()->route('home');
     }
 }

@@ -24,8 +24,11 @@
           </div>
 
           <div class="blockright card-block">
+              @if($post->image)
+                <img src="{{ asset('images/'. $post->image) }}"/>
+              @endif
               <hr>
-              <p>{{ $post->body }}</p>
+              <p>{!! $post->body !!}</p>
           </div>
 
           <div class="cardfooter">
