@@ -41,11 +41,19 @@
             </div>
           </div>
           
+          <div class="rating">
+            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
+            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
+            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
+            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
+            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
+            <!-- <p>46 response</p>
+            <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a> -->
+          </div>  
           <div class="likebutton">
-            <a href=""><span class="fa fa-heart-o" aria-hidden="true"></span></a>
-            <p>46 response</p>
-            <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a>
-          </div>          
+              <p>46 response</p>
+              <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a>
+          </div>        
       </div>
     </div>
   </div>
