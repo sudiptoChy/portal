@@ -18,7 +18,7 @@
 			</div>
 
 		@include('Partials._javascripts')
-		@yield('scriprs')
+		@yield('scripts')
 
 	</body>
 

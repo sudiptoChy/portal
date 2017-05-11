@@ -25,7 +25,7 @@
 
           <div class="blockright card-block">
               <hr>
-              <p>{{ $post->body }}</p>
+              <p>{!! $post->body !!}</p>
           </div>
 
           <div class="cardfooter">

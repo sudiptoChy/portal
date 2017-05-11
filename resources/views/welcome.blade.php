@@ -29,7 +29,7 @@
                   <div class="blockright card-block">
                       <hr>
                       
-                      <p>{{ substr($post->body, 0, 250) }} {{ strlen($post->body) > 250 ? "..." : ""}}</p>
+                      <p>{{ substr(strip_tags($post->body), 0, 250) }} {{ strlen(strip_tags($post->body)) > 250 ? "..." : ""}}</p>
                   </div>
 
                   <div class="cardfooter">
