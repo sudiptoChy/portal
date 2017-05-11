@@ -1,6 +1,6 @@
 @extends('Partials.main')
 
-@section('title' , '| create post')
+@section('title' , '| Edit post')
 
 @section('stylesheet')
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
@@ -16,7 +16,7 @@
 
     	<div class="row">
 			<div class="col-md-8">
-			      <form method="POST" action="{{ route('post.update', $post->id) }}">
+			      <form method="POST" action="{{ route('post.update', $post->id) }}" enctype="multipart/form-data">
 			        <div class="form-group">
 			          <label name="title">Title:</label>
 			          <input id="title" name="title" class="form-control" value="{{ $post->title }}">
@@ -45,6 +45,11 @@
 			                          </option>
 			                        @endforeach
 			                </select>
+			            </div>
+
+			            <div class="form-group">
+			              <label name="feature-image">Update Feature Image: </label>
+			              <input type="file" name="feature-image">
 			            </div>
 
 			        <div class="form-group">
