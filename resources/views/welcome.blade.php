@@ -28,7 +28,6 @@
                   <!--Post Body-->
                   <div class="blockright card-block">
                       <hr>
-                      
                       <p>{{ substr(strip_tags($post->body), 0, 250) }} {{ strlen(strip_tags($post->body)) > 250 ? "..." : ""}}</p>
                   </div>
 

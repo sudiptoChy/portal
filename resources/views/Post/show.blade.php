@@ -24,6 +24,7 @@
           </div>
 
           <div class="blockright card-block">
+              <img src="{{ asset('images/'. $post->image) }}"/>
               <hr>
               <p>{!! $post->body !!}</p>
           </div>

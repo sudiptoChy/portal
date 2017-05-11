@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\User;
 use Session;
 use Purifier;
+use Image;
 
 class PostController extends Controller
 {
@@ -80,11 +81,25 @@ class PostController extends Controller
         $post->slug = $request->slug;
         $post->category_id = $request->category_id;
         $post->body = Purifier::clean($request->input('body'), "youtube"); // Securing post body from malicious codes.
+
+        // Saving Featured Image
+
+        if($request->hasFile('feature-image')) {
+          $image = $request->file('feature-image');
+          $fileName = time() . '.' .$image->getClientOriginalExtension();
+          $location = public_path('images/'.$fileName);
+          Image::make($image)->resize(800, 400)->save($location);
+
+          $post->image = $fileName;
+        }
+
+
         $post->save();
         $post->tags()->sync($request->tags, false);
 
-      // Redirect to another page
-      return redirect()->route('home');
+        // Redirect to another page
+
+        return redirect()->route('home');
     }
 
     public function getEdit($id)
