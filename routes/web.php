@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', 'PostController@getIndex')->name('home');
+// Route for home
 
-//Home Page
+Route::get('/', 'HomeController@getIndex')->name('home');
 
-Route::get('/home-dip', 'PostController@getIndex')->name('home-dip');
+
+// User Routes (testing)
+
+Route::get('/user', 'PostController@getIndex')->name('home.user');
+
 
 // Post Routes
 Route::get('/post/create', 'PostController@getCreate')->name('post.create');
