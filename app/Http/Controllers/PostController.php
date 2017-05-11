@@ -43,7 +43,7 @@ class PostController extends Controller
           'UserByRating' => $UserByRating
         ];
 
-        return view('welcome')->with($data);
+        return view('user')->with($data);
     }
 
     public function getShow($slug)
