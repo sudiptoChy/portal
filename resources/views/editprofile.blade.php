@@ -19,7 +19,7 @@
                   </div>
 
                   <div>
-                  <a style="margin-bottom: 5px;" href="#" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-md btn-default">Update Password</a>
+                  <a style="margin-bottom: 5px;" href="{{ route('password.change') }}" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-md btn-default">Change Password</a>
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@
                             <input type="text" name="name" class="form-control" placeholder="Jaber Ahmed">
                           </div>
 
-                          <div class="col-md-10 col-md-offset-1">
+                          <div class="col-md-10 col-md-offset-2">
                             <button class="btn btn-success"> Update</button>
                             <button class="btn btn-primary"> Back</button>
                           </div>

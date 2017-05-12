@@ -588,3 +588,10 @@ input[type=file]::-webkit-file-upload-button {
 }
 
 /*end panel section for userprofile*/
+
+/*form for password*/
+
+.col-md-12 input[type=password]{
+
+	font-weight: normal;
+}
