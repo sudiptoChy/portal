@@ -105,9 +105,9 @@
                 <h3>Tags</h3>
                 <ul>
                   @foreach($tags as $tag)
-                    <a href="{{ route('tag.show', $tag->id )}}"><li>{{ $tag->name }} ({{ $tag->posts()->count()}})</li></a>
+                      <a href="{{ route('tag.show', $tag->id) }}"><span class="label label-md label-primary">{{$tag->name}}</span></a>
                   @endforeach
-                </ul>
+                  </ul>
               </div>
           </div>
     </div>
