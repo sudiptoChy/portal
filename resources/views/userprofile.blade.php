@@ -63,7 +63,7 @@
           <div class="panel-footer">
               <a href="message.html" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-md btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
               <span class="pull-right">
-                  <a href="edit.html" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-md btn-warning"><i class="fa fa-edit"></i></a>
+                  <a href="{{route('profile.edit')}}" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-md btn-warning"><i class="fa fa-edit"></i></a>
               </span>
           </div>
         </div>
