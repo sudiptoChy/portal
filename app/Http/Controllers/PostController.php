@@ -48,7 +48,8 @@ class PostController extends Controller
 
     public function getShow($slug)
     {
-    	$post = $this->post->where('slug', '=', $slug)->first();
+    	$post = $this->post->where('slug', '=', $slug)->with('category')->first();
+        //return $post;
     	return view('Post.show')->with('post', $post);
     }
 

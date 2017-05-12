@@ -6,15 +6,15 @@
 
     <div class="row">
 
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-lg-10 col-lg-offset-1">
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title">Jaber Ahmed</h3>
+            <h3 class="panel-title" style="font-weight: bold;">User Profile</h3>
           </div>
           <div class="panel-body">
             <div class="row">
-              <div class="col-sm-2">
-                <div class="avatar">
+              <div class="col-md-3">
+                <div class="avatar" style="margin-top: 15px;">
                     <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
                 </div>
 
@@ -24,7 +24,7 @@
               </span>
           </div>
               </div>
-              <div class="col-sm-8">
+              <div class="col-md-7">
                 <table class="table table-inverse table-hover">
                     <tbody>
                       <tr>

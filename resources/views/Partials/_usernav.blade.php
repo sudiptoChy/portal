@@ -98,7 +98,7 @@
                     </ul>
                 </li>
         <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/mohsin.jpg" class="img-circle" alt="images"></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"></a>
                   <ul class="dropdown-menu">
                          <li>
                             <a href="{{route('user.profile')}}"><i class="fa fa-fw fa-user"></i>Profile</a>
