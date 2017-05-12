@@ -1,6 +1,6 @@
 @extends('Partials._usermain')
 
-@section('title' , '| User')
+@section('title' , '| User Profile')
 
 @section('content')
 
