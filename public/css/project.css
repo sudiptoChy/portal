@@ -581,4 +581,10 @@ input[type=file]::-webkit-file-upload-button {
 	margin-bottom: 12px;
 }
 
+.panel-body .col-sm-3 img{
+
+	max-width: 55%;
+	margin-bottom: 12px;
+}
+
 /*end panel section for userprofile*/

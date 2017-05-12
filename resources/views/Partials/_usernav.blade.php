@@ -100,13 +100,8 @@
         <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/mohsin.jpg" class="img-circle" alt="images"></a>
                   <ul class="dropdown-menu">
-                      <li><h4>Mohsin Ahmed</h4></li>
-                      <li class="divider"></li>
-                        <li>
-                            <a href="setting.html"><i class="fa fa-fw fa-user"></i>Settings</a>
-                        </li>
-                        <li>
-                            <a href="setting.html"><i class="fa fa-fw fa-user"></i>Profile</a>
+                         <li>
+                            <a href="{{route('user.profile')}}"><i class="fa fa-fw fa-user"></i>Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li>
