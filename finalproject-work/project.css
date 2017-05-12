@@ -569,6 +569,6 @@ input[type=file]::-webkit-file-upload-button {
 
 .card-block .comment{
 
-	padding-top: 10px;
+	padding: 5px;
 	margin-left: 10px;
 }
