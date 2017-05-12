@@ -23,6 +23,15 @@ Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 Route::get('/user', 'PostController@getIndex')->name('home.user');
 
 
+//userProfile Route
+
+Route::get('/userprofile', 'ProfileController@getIndex');
+
+//EditProfile Route
+
+Route::get('/editprofile', 'ProfileController@getEdit');
+
+
 // Post Routes
 Route::get('/post/create', 'PostController@getCreate')->name('post.create');
 Route::post('/post/store', 'PostController@postCreate')->name('post.store');
