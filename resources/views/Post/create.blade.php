@@ -8,6 +8,7 @@
       tinymce.init({ 
         selector:'textarea',
         plugins: "link code fullscreen media emoticons insertdatetime",
+        media_dimensions: false,
       });
     </script>
 @endsection
