@@ -15,10 +15,21 @@
 
 Route::get('/', 'HomeController@getIndex')->name('home');
 
+// User Routes
+Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 
-// User Routes (testing)
+// User Home Routes (testing)
 
 Route::get('/user', 'PostController@getIndex')->name('home.user');
+
+
+//userProfile Route
+
+Route::get('/userprofile', 'ProfileController@getIndex');
+
+//EditProfile Route
+
+Route::get('/editprofile', 'ProfileController@getEdit');
 
 
 // Post Routes

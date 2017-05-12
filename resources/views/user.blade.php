@@ -1,6 +1,6 @@
-@extends('Partials.main')
+@extends('Partials._usermain')
 
-@section('title' , '| home')
+@section('title' , '| User')
 
 @section('content')
 
@@ -41,13 +41,12 @@
                       <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
                       <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
                       <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
-                      <!-- <p>46 response</p>
-                      <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a> -->
                    </div>
                    <div class="likebutton">
                      <p>46 response</p>
                       <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a>
                    </div>
+                   
               </div>
               @endforeach
               

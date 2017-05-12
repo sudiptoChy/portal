@@ -1,18 +1,26 @@
-@include('Partials._head')
-@include('Partials._nav')
+@extends('Partials.main')
 
-<div class="maincontent padding-top-130">
-    <div class="container">
+@section('title' , '| Edit post')
+
+@section('stylesheet')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>
+      tinymce.init({ 
+        selector:'textarea',
+        plugins: "link code fullscreen media emoticons insertdatetime",
+        media_dimensions: false,
+      });
+    </script>
+@endsection
+
+@section('content')
+
     	<div class="row">
 			<div class="col-md-8">
-			      <form method="POST" action="{{ route('post.update', $post->id) }}">
+			      <form method="POST" action="{{ route('post.update', $post->id) }}" enctype="multipart/form-data">
 			        <div class="form-group">
 			          <label name="title">Title:</label>
 			          <input id="title" name="title" class="form-control" value="{{ $post->title }}">
-			        </div>
-			        <div class="form-group">
-			          <label name="title">Slug:</label>
-			          <input id="title" name="slug" class="form-control" value="{{ $post->slug }}">
 			        </div>
 
 			        <div class="form-group">
@@ -34,6 +42,11 @@
 			                          </option>
 			                        @endforeach
 			                </select>
+			            </div>
+
+			            <div class="form-group">
+			              <label name="feature-image">Update Feature Image: </label>
+			              <input type="file" name="feature-image">
 			            </div>
 
 			        <div class="form-group">
@@ -71,9 +84,11 @@
     	</div>
   	</div>
  </div>
-@include('Partials._footer')
-@include('Partials._javascripts')
+@endsection
+
+@section('scripts')
   <script type="text/javascript">
     $('.select2-multi').select2();
     $('.select2-multi').val({!! json_encode($post->tags()->allRelatedIds()) !!}).trigger('change');
   </script>
+@endsection
