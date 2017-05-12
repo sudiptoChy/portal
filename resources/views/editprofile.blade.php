@@ -17,8 +17,8 @@
               </div>
               <div class="col-md-9 col-lg-9">
                 <table class="table table-user-information">
-                    <form class="form-group">
-                      <label>Department: </label>
+                    <form class="form-horizontal">
+                      <label class="control-label">Department: </label>
                       <input type="text" class="form-control" name="department" placeholder="CSE" />
                       <label>Name: </label>
                       <input type="text" class="form-control" name="name" placeholder="Jaber Ahmed" />
