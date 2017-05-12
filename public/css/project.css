@@ -572,3 +572,13 @@ input[type=file]::-webkit-file-upload-button {
 	margin-right: -20px;
 }
 /*end the process of dropdown manu close*/
+
+/*panel section for userprofile*/
+
+.panel-body .col-md-3 img{
+
+	max-width: 60%;
+	margin-bottom: 12px;
+}
+
+/*end panel section for userprofile*/
