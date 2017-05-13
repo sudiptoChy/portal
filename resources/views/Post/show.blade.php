@@ -46,7 +46,7 @@
           <div class="rate">
 
             <div class="pull-right">
-             <button style="margin-top: -6px;" class="btn btn-sm btn-primary">Rate</button>
+             <button style="margin-top: -5.2px;" class="btn btn-sm btn-primary">Rate</button>
             </div>
 
             <div style="width: 110px; margin-top: -10px; " class="pull-right input-group">
