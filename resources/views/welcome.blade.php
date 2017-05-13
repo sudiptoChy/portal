@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="rightname">
-                          <li><a href="{{ route('post.show', $post->id) }}">{{ $post->title }}</a></li>
+                          <li><a href="{{ route('post.show', $post->slug) }}"> {{ $post->title }} </a></li>
                         </div>
 
                         <div class="name">
