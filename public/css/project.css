@@ -283,7 +283,7 @@ h3{
 
 }*/
 .padding-top-130{
-	padding-top: 130px;
+	padding-top: 90px;
 }
 
 .cardfooter{
@@ -581,4 +581,21 @@ input[type=file]::-webkit-file-upload-button {
 	margin-bottom: 12px;
 }
 
+.panel-body .col-sm-3 img{
+
+	max-width: 55%;
+	margin-bottom: 12px;
+}
+
 /*end panel section for userprofile*/
+
+/*form for password*/
+
+.col-md-12 input[type=password]{
+
+	font-weight: normal;
+}
+.categories ul a .label{
+
+	display: block;
+}
