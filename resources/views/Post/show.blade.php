@@ -53,16 +53,39 @@
           </div>  -->
 
           <hr>
+
+          <div class="rate">
+
+          <div class="pull-right">
+           <button style="margin-top: -4px;" class="btn btn-primary">Rate</button>
+        </div>
+
+        <div style="width: 110px; margin-top: -10px; " class="pull-right input-group">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-number btn-md" disabled="disabled" data-type="minus" data-field="quant[1]">
+                <span class="fa fa-minus"></span>
+            </button>
+        </span>
+        <input style="margin-left: -1px; margin-top: 3px; border-bottom: 0px;" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-number btn-md" data-type="plus" data-field="quant[1]">
+                <span class="fa fa-plus"></span>
+            </button>
+        </span>
+      </div>
+
+      <div class="pull-right">
+           <h4 style="margin-top: 3px;">Rating: 4.5</h4>
+        </div>
+
+        </div>
+
           <div style="margin-left: 18px; margin-bottom: 10px;" class="tags">
           @foreach($post->tags as $tag)
           <a href="{{ route('tag.show', $tag->id) }}"><span class="label label-sm label-default">{{$tag->name}}</span></a>
           @endforeach
           </div>
 
-         <!--  <div class="likebutton">
-              <p>46 response</p>
-              <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a>
-          </div> -->        
       </div>
     </div>
   </div>

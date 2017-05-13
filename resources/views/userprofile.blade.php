@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="row">
+    <div style="margin-top: 20px;" class="row">
 
       <div class="col-lg-10 col-lg-offset-1">
         <div class="panel panel-info">
