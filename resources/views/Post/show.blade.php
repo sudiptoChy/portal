@@ -33,24 +33,8 @@
           </div>
 
           <div class="cardfooter">
-            <!-- <div class="group">
-                  <input id="user" type="text" class="input" placeholder="comment here....">
-            </div>
-            
-            <div class="buttonright">
-              <button class="btn btn-success">comment</button>
-            </div> -->
+
           </div>
-          
-          <!-- <div class="rating">
-            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
-            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
-            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
-            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
-            <a href=""><span class="fa fa-star-o" aria-hidden="true"></span></a>
-            <p>46 response</p>
-            <a href=""><span class="fa fa-bookmark" aria-hidden="true"></span></a>
-          </div>  -->
 
           <hr>
 
@@ -77,7 +61,6 @@
       <div class="pull-right">
            <h4 style="margin-top: 3px;">Rating: 4.5</h4>
         </div>
-
         </div>
 
           <div style="margin-left: 18px; margin-bottom: 10px;" class="tags">
@@ -85,7 +68,40 @@
           <a href="{{ route('tag.show', $tag->id) }}"><span class="label label-sm label-default">{{$tag->name}}</span></a>
           @endforeach
           </div>
+      </div>
+    </div>
+  </div>
 
+  <div style="margin-top: 20px;" class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <form action="#" method="post" role="form" class="facebook-share-box">
+        <div class="panel panel-default">
+                      <div class="panel-heading"></i>Comment Here</div>
+                      <div class="panel-body">
+                        <div class="">
+                            <textarea name="message" cols="10" rows="5" id="status_message" class="form-control message" style="height: 40px; overflow: hidden;" placeholder="Comment..."></textarea> 
+                            <button style="margin-top: -8px;" class="pull-right btn btn-primary btn-md">Comment</button>
+                        </div>
+                      </div>
+              <!-- <div style="height: 40px;" class="panel-footer">
+                <div class="pull-right form-group">                                               
+                </div>
+            </div> -->
+        </div>
+       </form>
+      </div>
+      </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="card testimonial-card">
+          <div class="card-up default-color-default">
+            <p style="margin-top: 30px; font-style: italic; font-weight: normal;">This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.</p>
+          </div> 
+
+          <div style="margin-left: 15px; width: 70px;" class="avatar">
+            <img style="margin-top: 10px;" src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
+          </div>
       </div>
     </div>
   </div>
