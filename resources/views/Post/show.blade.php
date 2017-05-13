@@ -46,13 +46,13 @@
 
         <div style="width: 110px; margin-top: -10px; " class="pull-right input-group">
         <span class="input-group-btn">
-            <button type="button" class="btn btn-default btn-number btn-md" disabled="disabled" data-type="minus" data-field="quant[1]">
+            <button type="button" class="btn btn-primary btn-number btn-md" disabled="disabled" data-type="minus" data-field="quant[1]">
                 <span class="fa fa-minus"></span>
             </button>
         </span>
         <input style="margin-left: -1px; margin-top: 3px; border-bottom: 0px;" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
         <span class="input-group-btn">
-            <button type="button" class="btn btn-default btn-number btn-md" data-type="plus" data-field="quant[1]">
+            <button type="button" class="btn btn-primary btn-number btn-md" data-type="plus" data-field="quant[1]">
                 <span class="fa fa-plus"></span>
             </button>
         </span>
