@@ -25,11 +25,15 @@ Route::get('/user', 'PostController@getIndex')->name('home.user');
 
 //userProfile Route
 
-Route::get('/userprofile', 'ProfileController@getIndex');
+Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
 
 //EditProfile Route
 
-Route::get('/editprofile', 'ProfileController@getEdit');
+Route::get('/user/profile/edit', 'ProfileController@getEdit')->name('profile.edit');
+
+//Change password Route
+
+Route::get('/user/profile/changepass', 'ProfileController@editPass')->name('password.change');
 
 
 // Post Routes
