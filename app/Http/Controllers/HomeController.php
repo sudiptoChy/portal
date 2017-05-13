@@ -43,4 +43,9 @@ class HomeController extends Controller
 
         return view('welcome')->with($data);
     }
+
+    public function getAbout(){
+
+        return view('aboutus');
+    }
 }

@@ -114,5 +114,42 @@ $(".input-number").keydown(function (e) {
 
     </script>
 
+    <!-- for about us page -->
+
+    <script>
+
+new WOW().init();
+$(".rotate-btn-1").click(function(){
+  $("#card-1").addClass("flipped");
+});
+$(".rotate-btn-1.back").click(function(){
+  $("#card-1").removeClass("flipped");
+});
+
+new WOW().init();
+$(".rotate-btn-2").click(function(){
+  $("#card-2").addClass("flipped");
+});
+$(".rotate-btn-2.back").click(function(){
+  $("#card-2").removeClass("flipped");
+});
+
+new WOW().init();
+$(".rotate-btn-3").click(function(){
+  $("#card-3").addClass("flipped");
+});
+$(".rotate-btn-3.back").click(function(){
+  $("#card-3").removeClass("flipped");
+});
+
+new WOW().init();
+$(".rotate-btn-4").click(function(){
+  $("#card-4").addClass("flipped");
+});
+$(".rotate-btn-4.back").click(function(){
+  $("#card-4").removeClass("flipped");
+});
+</script>
+
   </body>
 </html>
