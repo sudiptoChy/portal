@@ -19,10 +19,10 @@ class HomeController extends Controller
 
     public function __construct(Category $category, Tag $tag, Post $post, User $user)
     {
-    	$this->category = $category;
-    	$this->tag = $tag;
-    	$this->post = $post;
-    	$this->user = $user;
+        $this->category = $category;
+        $this->tag = $tag;
+        $this->post = $post;
+        $this->user = $user;
     }
 
     public function getIndex()
