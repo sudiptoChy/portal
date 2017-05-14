@@ -681,3 +681,34 @@ input[type=file]::-webkit-file-upload-button {
 	position:relative;
 	background:url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg) no-repeat center;
 }
+
+.card-up-down{
+
+	width:100%;
+	margin:auto;
+	max-width:1000px;
+	min-height:120px;
+	position:relative;
+}
+
+.testimonial-card-1 .avatar img{
+
+    width: 15%;
+    position: absolute;
+    background: #fff;
+    vertical-align: middle;
+    border: 5px solid #fff;
+    margin-top: -50px;
+    margin-left: 40%;
+}
+
+.testimonial-card-1 .card-up-down{
+
+	overflow: hidden;
+}
+
+.testimonial-card-1 .card-block-1{
+
+	text-align: center;
+	margin-top: 12%;
+}

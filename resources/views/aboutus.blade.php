@@ -42,7 +42,6 @@
             <!--Social Icons-->
             <ul class="inline-ul">
                 <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
                 <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"></i></a></li>
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
@@ -58,7 +57,7 @@
 
 <div class="col-sm-3">
       <div class="card-wrapper">
-    <div id="card-1" class="card-rotating effect__click">
+    <div id="card-2" class="card-rotating effect__click">
 
         <!--Front Side-->
         <div class="face front">
@@ -75,7 +74,7 @@
                 <h4>Sudipto Chowdhury</h4>
                 <p style="text-align:center;">Web Developer At AuthLab</p>
                 <!--Triggering button-->
-                <a class="rotate-btn-1" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
+                <a class="rotate-btn-2" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
             </div>
         </div>
         <!--/.Front Side-->
@@ -91,12 +90,11 @@
             <!--Social Icons-->
             <ul class="inline-ul">
                 <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
                 <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"></i></a></li>
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!--Triggering button-->
-            <a class="rotate-btn-1 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
+            <a class="rotate-btn-2 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
 
         </div>
         <!--/.Back Side-->
@@ -107,7 +105,7 @@
 
 <div class="col-sm-3">
       <div class="card-wrapper">
-    <div id="card-1" class="card-rotating effect__click">
+    <div id="card-3" class="card-rotating effect__click">
 
         <!--Front Side-->
         <div class="face front">
@@ -124,7 +122,7 @@
                 <h4>Tajul Islam Jony</h4>
                 <p style="text-align:center;">Front-End Deisgner</p>
                 <!--Triggering button-->
-                <a class="rotate-btn-1" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
+                <a class="rotate-btn-3" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
             </div>
         </div>
         <!--/.Front Side-->
@@ -140,12 +138,11 @@
             <!--Social Icons-->
             <ul class="inline-ul">
                 <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
                 <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"></i></a></li>
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!--Triggering button-->
-            <a class="rotate-btn-1 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
+            <a class="rotate-btn-3 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
 
         </div>
         <!--/.Back Side-->
@@ -156,7 +153,7 @@
 
 <div class="col-sm-3">
       <div class="card-wrapper">
-    <div id="card-1" class="card-rotating effect__click">
+    <div id="card-4" class="card-rotating effect__click">
 
         <!--Front Side-->
         <div class="face front">
@@ -173,7 +170,7 @@
                 <h4>Mohsin Ahmed</h4>
                 <p style="text-align:center;">Database Expert</p>
                 <!--Triggering button-->
-                <a class="rotate-btn-1" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
+                <a class="rotate-btn-4" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
             </div>
         </div>
         <!--/.Front Side-->
@@ -189,12 +186,11 @@
             <!--Social Icons-->
             <ul class="inline-ul">
                 <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
                 <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"></i></a></li>
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!--Triggering button-->
-            <a class="rotate-btn-1 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
+            <a class="rotate-btn-4 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
 
         </div>
         <!--/.Back Side-->
