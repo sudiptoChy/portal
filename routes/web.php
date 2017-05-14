@@ -33,6 +33,8 @@ Route::get('/user/profile/edit', 'ProfileController@getEdit')->name('profile.edi
 
 Route::get('/about', 'HomeController@getAbout')->name('about');
 
+Route::get('/author', 'HomeController@getAuthor')->name('author');
+
 //Change password Route
 
 Route::get('/user/profile/changepass', 'ProfileController@editPass')->name('password.change');

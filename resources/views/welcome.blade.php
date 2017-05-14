@@ -11,7 +11,7 @@
                   <div class="card-up default-color-default">
                       <div class="right">
                           <h4 class="card-title">{{ $post->title }}</h4>
-                          <a href="{{ route('user.profile') }}"><h5 class="author">Author: Jaber Ahmed</h5></a>
+                          <a href="{{ route('author') }}"><h5 class="author">Author: Jaber Ahmed</h5></a>
                           @if ($post->created_at->diffInMonths(Carbon\Carbon::now()) >= 1)
                           <p class="time"> {{ $post->created_at->format('j M Y , g:ia') }} </p>
                           @else

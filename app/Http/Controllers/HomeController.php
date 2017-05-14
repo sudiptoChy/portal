@@ -48,4 +48,9 @@ class HomeController extends Controller
 
         return view('aboutus');
     }
+
+    public function getAuthor()
+    {
+        return view('author');
+    }
 }
