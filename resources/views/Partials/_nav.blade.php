@@ -53,7 +53,7 @@
                 <a class="nav-link" href="#"><p>Catagories</p></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><p>About</p></a>
+                <a class="nav-link" href="{{ route('about') }}"><p>About Us</p></a>
             </li>
 
             <li class="nav-item">

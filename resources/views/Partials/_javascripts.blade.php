@@ -114,5 +114,59 @@ $(".input-number").keydown(function (e) {
 
     </script>
 
+    <!-- for about us page -->
+
+    <script>
+
+new WOW().init();
+$(".rotate-btn-1").click(function(){
+  $("#card-1").addClass("flipped");
+});
+$(".rotate-btn-1.back").click(function(){
+  $("#card-1").removeClass("flipped");
+});
+
+new WOW().init();
+$(".rotate-btn-2").click(function(){
+  $("#card-2").addClass("flipped");
+});
+$(".rotate-btn-2.back").click(function(){
+  $("#card-2").removeClass("flipped");
+});
+
+new WOW().init();
+$(".rotate-btn-3").click(function(){
+  $("#card-3").addClass("flipped");
+});
+$(".rotate-btn-3.back").click(function(){
+  $("#card-3").removeClass("flipped");
+});
+
+new WOW().init();
+$(".rotate-btn-4").click(function(){
+  $("#card-4").addClass("flipped");
+});
+$(".rotate-btn-4.back").click(function(){
+  $("#card-4").removeClass("flipped");
+});
+</script>
+
+
+<!-- For author profile modals -->
+
+ <script>
+
+        $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+          var modal = $(this)
+          modal.find('.modal-title').text('New message to ' + recipient)
+          modal.find('.modal-body input').val(recipient)
+})
+
+    </script>
+
   </body>
 </html>
