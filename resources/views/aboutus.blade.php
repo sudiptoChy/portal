@@ -23,7 +23,7 @@
             </div>
             <!--Content-->
             <div class="card-block">
-                <h4>Jaber Ahmed</h4>
+                <h4>Jaber Ahmed Molla bodyBuilder</h4>
                 <p style="text-align:center;">Intern Developer At Hexit</p>
                 <!--Triggering button-->
                 <a class="rotate-btn-1" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
