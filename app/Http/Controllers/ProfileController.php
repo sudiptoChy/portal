@@ -18,8 +18,4 @@ class ProfileController extends Controller
 
     	return view('changepass');
     }
-    public function showAuthor(){
-
-    	return view('author');
-    }
 }
