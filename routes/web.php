@@ -31,9 +31,16 @@ Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
 
 Route::get('/user/profile/edit', 'ProfileController@getEdit')->name('profile.edit');
 
+//About us Route
 Route::get('/about', 'HomeController@getAbout')->name('about');
 
+
+//Author Route
 Route::get('/author', 'HomeController@getAuthor')->name('author');
+
+//Message Route
+
+Route::get('/user/message', 'UserController@getMessage')->name('message');
 
 //Change password Route
 
