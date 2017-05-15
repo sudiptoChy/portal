@@ -18,7 +18,7 @@ class CategoriesTableSeeder extends Seeder
             ],
 
             [
-                'name' => 'Electrical Engineering'
+                'name' => 'Electrical & Electronic Engineering (EEE)'
             ],
 
             [
