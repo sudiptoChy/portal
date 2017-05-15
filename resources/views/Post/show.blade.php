@@ -40,10 +40,10 @@
           <div class="rate">
 
             <div class="pull-right">
-             <button style="margin-top: -5.2px;" class="btn btn-sm btn-primary">Rate</button>
+             <button style="margin-top: -1.5px;" class="btn btn-sm btn-primary">Rate</button>
             </div>
 
-            <div style="width: 110px; margin-top: -10px; " class="pull-right input-group">
+            <div style="width: 110px; margin-top: -7px; " class="pull-right input-group">
             <span class="input-group-btn">
                 <button type="button" class="btn btn-default btn-number btn-sm" disabled="disabled" data-type="minus" data-field="quant[1]">
                     <span class="fa fa-minus"></span>
@@ -58,13 +58,13 @@
           </div>
 
           <div class="pull-right">
-               <h4 style="margin-top: 1px; margin-right: 4px;"><strong>Rating: 4.5</strong></h4>
+               <h4 style="margin-top: 1px; margin-right: 7px; margin-bottom: 2px;"><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> 4.5 </i></span></h4>
             </div>
           </div>
 
           <div style="margin-left: 18px; margin-bottom: 10px;" class="tags">
             @foreach($post->tags as $tag)
-              <a href="{{ route('tag.show', $tag->id) }}"><span class="label label-sm label-default">{{$tag->name}}</span></a>
+              <a href="{{ route('tag.show', $tag->id) }}"><span class="label label-sm label-primary"><i class="fa fa-tags" aria-hidden="true"> {{$tag->name}} </i></span></a>
             @endforeach
           </div>
       </div>
@@ -75,11 +75,13 @@
   <div class="col-md-10 col-md-offset-1">
     <form action="#" method="post" role="form" class="facebook-share-box">
         <div class="panel panel-default">
-                      <div class="panel-heading"></i>Comment Here</div>
+                      
+                      <div class="panel-heading"><i class="fa fa-comments" aria-hidden="true"> (10)</i></div>
                       <div class="panel-body">
                         <div class="">
-                            <textarea name="message" cols="10" rows="5" id="status_message" class="form-control message" style="height: 40px; overflow: hidden;" placeholder="Comment..."></textarea> 
-                            <button style="margin-top: -8px;" class="pull-right btn btn-primary btn-md">Comment</button>
+                            <textarea name="message" cols="10" rows="5" id="status_message" class="form-control message" style="height: 100px; overflow: hidden;" placeholder="Write your comment here.."></textarea>
+                            <button style="margin-top: -8px;" class="pull-right btn btn-default btn-md"><i class="fa fa-comment" aria-hidden="true"> Comment </i></button>
+                            
                         </div>
                       </div>
               <!-- <div style="height: 40px;" class="panel-footer">
