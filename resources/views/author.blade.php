@@ -27,21 +27,22 @@
             </div>
             <hr>
             <div style="text-align: center;" class="rate">
-
-            	<h5 style="padding-bottom: 10px;">Rating: 8</h5>
-                <h5 style="margin-top: -8px; padding-bottom: 10px;">Total Post: 10</h5>
-
-            </div>	
+            	<h2><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> 4.5 </i></span></h2>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+              <h2 ><span class="label label-md label-primary"> Total Post(s): 10 </span></h2>
+            </div>
+            	
               <hr>
 
             <div class="card-footer">
-               <button style="margin-left: 400px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="">Send Message</button>
+               <button style="margin-left: 400px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever=""><i class="fa fa-send" aria-hidden="true"> Send Message </i></button>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -49,18 +50,14 @@
                       <div class="modal-body">
                         <form>
                           <div class="form-group">
-                            <label for="recipient-email" class="form-control-label">Recipient Email:</label>
-                            <input type="email" class="form-control" id="recipient-email">
-                          </div>
-                          <div class="form-group">
                             <label for="message-text" class="form-control-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea class="form-control" id="message-text" style="height: 100px;" "></textarea>
                           </div>
                         </form>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-send" aria-hidden="true"> Send message </i></button>
                       </div>
                     </div>
                   </div>
