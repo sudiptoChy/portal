@@ -14,7 +14,7 @@ class CategoriesTableSeeder extends Seeder
     {
          $data = [
             [
-                'name' => 'Computer Engineering'             
+                'name' => 'Computer Science & Engineering (CSE)'             
             ],
 
             [
