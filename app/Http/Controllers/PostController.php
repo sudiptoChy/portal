@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Category;
 use App\User;
+use App\Models\PostRate;
 use Session;
 use Purifier;
 use Image;
@@ -49,7 +50,24 @@ class PostController extends Controller
     public function getShow($slug)
     {
     	$post = $this->post->where('slug', '=', $slug)->with('category')->first();
-    	return view('Post.show')->with('post', $post);
+        $userID = 2;
+        $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
+        $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
+        $canRate = true;
+
+        foreach($ratedUser as $user)
+        {
+            if($user == $userID) $canRate = false;
+        }
+
+        $data = [
+            'post' => $post,
+            'userID' => $userID,
+            'postRating' => $postRating,
+            'canRate' => $canRate
+        ];
+
+    	return view('Post.show')->with($data);
     }
 
     public function getCreate()
@@ -166,6 +184,18 @@ class PostController extends Controller
         // Redirect to another page
 
         return redirect()->route('post.show', $post->id);
+    }
+
+    public function postRating(Request $request, $post_id, $user_id)
+    {
+        $post = Post::find($user_id);
+        $postRate = new PostRate;
+        $postRate->post_id = $post_id;
+        $postRate->user_id = $user_id;
+        $postRate->rating = $request->get('rate');
+
+        $postRate->save();
+        return redirect()->route('post.show', $post->slug);
     }
 
     public function getDelete($id)

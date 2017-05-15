@@ -15,6 +15,10 @@
 
 Route::get('/', 'HomeController@getIndex')->name('home');
 
+
+//Signup Route
+Route::get('/signup', 'HomeController@getSignup')->name('signup');
+
 // User Routes
 Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 
@@ -31,9 +35,16 @@ Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
 
 Route::get('/user/profile/edit', 'ProfileController@getEdit')->name('profile.edit');
 
+//About us Route
 Route::get('/about', 'HomeController@getAbout')->name('about');
 
+
+//Author Route
 Route::get('/author', 'HomeController@getAuthor')->name('author');
+
+//Message Route
+
+Route::get('/user/message', 'UserController@getMessage')->name('message');
 
 //Change password Route
 
@@ -43,10 +54,11 @@ Route::get('/user/profile/changepass', 'ProfileController@editPass')->name('pass
 // Post Routes
 Route::get('/post/create', 'PostController@getCreate')->name('post.create');
 Route::post('/post/store', 'PostController@postCreate')->name('post.store');
-Route::get('/post/edit/{id}', 'PostController@getEdit')->name('post.edit');
+Route::get('/post/edit/{slug}', 'PostController@getEdit')->name('post.edit');
 Route::post('post/update/{id}', 'PostController@postEdit')->name('post.update');
 Route::get('post/delete/{id}', 'PostController@getDelete')->name('post.delete');
-Route::get('/post/{id}', 'PostController@getShow')->name('post.show');
+Route::get('/post/{slug}', 'PostController@getShow')->name('post.show');
+Route::post('/post/{post_id}/{user_id}', 'PostController@postRating')->name('post.rating');
 
 // Category Routes
 Route::get('/categories', 'CategoryController@getIndex')->name('categories.index');

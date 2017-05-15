@@ -167,6 +167,5 @@ $(".rotate-btn-4.back").click(function(){
 })
 
     </script>
-
   </body>
 </html>

@@ -20,4 +20,9 @@ class Post extends Model
     {
     	return $this->belongsToMany('App\Models\Tag');
     }
+
+    public function ratings()
+    {
+        return $this->hasMany('App\Models\PostRate');
+    }
 }

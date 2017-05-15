@@ -22,7 +22,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a id="show_signup" class="nav-link waves-effect waves-light" href="login.html">
+            <a id="show_signup" class="nav-link waves-effect waves-light" href="{{ route('signup') }}">
               <i class="fa fa-user"></i>
               <span class="hidden-sm-down">Sign Up</span>
             </a>

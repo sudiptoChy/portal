@@ -105,7 +105,7 @@
                 <h3>Tags</h3>
                 <ul>
                   @foreach($tags as $tag)
-                      <a href="{{ route('tag.show', $tag->id) }}"><span style="line-height: 24px;" class="label label-md label-default">{{$tag->name}}</span></a>
+                      <a href="{{ route('tag.show', $tag->id) }}"><span style="line-height: 24px;" class="label label-md label-default"><i class="fa fa-tag" aria-hidden="true"> {{ $tag->name }} </i></span></a>
                   @endforeach
                   </ul>
               </div>
