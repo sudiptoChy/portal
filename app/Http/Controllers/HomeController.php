@@ -53,4 +53,9 @@ class HomeController extends Controller
     {
         return view('author');
     }
+
+    public function getSignup(){
+
+        return view('signup');
+    }
 }
