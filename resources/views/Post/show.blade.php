@@ -37,30 +37,39 @@
           </div>
           <hr>
 
+          
+            
           <div class="rate">
-
+          <form method="post" action="{{ route('post.rating',['post_id' => $post->id, 'user_id'=> $userID ]) }}">
             <div class="pull-right">
-             <button style="margin-top: -1.5px;" class="btn btn-sm btn-primary">Rate</button>
+            @if($canRate)
+              <button style="margin-top: -1.5px;" class="btn btn-sm btn-primary">Rate</button>
+            @else
+              <button style="margin-top: -1.5px;" class="btn btn-sm btn-disabled">Rate</button>
+            @endif
+             <input type="hidden" name="_token" value="{{ Session::token() }}">
             </div>
 
             <div style="width: 110px; margin-top: -7px; " class="pull-right input-group">
             <span class="input-group-btn">
-                <button type="button" class="btn btn-default btn-number btn-sm" disabled="disabled" data-type="minus" data-field="quant[1]">
+                <button type="button" class="btn btn-default btn-number btn-sm" disabled="disabled" data-type="minus" data-field="rate">
                     <span class="fa fa-minus"></span>
                 </button>
             </span>
-            <input style=" margin-top: 3px; border-bottom: 0px;" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+            <input style=" margin-top: 3px; border-bottom: 0px;" type="text" name="rate" class="form-control input-number" value="1" min="1" max="10">
             <span class="input-group-btn">
-                <button type="button" class="btn btn-default btn-number btn-sm" data-type="plus" data-field="quant[1]">
+                <button type="button" class="btn btn-default btn-number btn-sm" data-type="plus" data-field="rate">
                     <span class="fa fa-plus"></span>
                 </button>
             </span>
           </div>
-
+        </form>
           <div class="pull-right">
-               <h4 style="margin-top: 1px; margin-right: 7px; margin-bottom: 2px;"><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> 4.5 </i></span></h4>
+               <h4 style="margin-top: 1px; margin-right: 7px; margin-bottom: 2px;"><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> {{ $postRating }} </i></span></h4>
             </div>
           </div>
+
+          </form>
 
           <div style="margin-left: 18px; margin-bottom: 10px;" class="tags">
             @foreach($post->tags as $tag)
