@@ -18,7 +18,7 @@ class CategoriesTableSeeder extends Seeder
             ],
 
             [
-                'name' => 'Electrical Engineering'
+                'name' => 'Electrical & Electronic Engineering (EEE)'
             ],
 
             [
@@ -34,11 +34,11 @@ class CategoriesTableSeeder extends Seeder
             ],
 
             [
-            	'name' => 'Business'
+            	'name' => 'Business Administration'
             ],
 
             [
-            	'name' => 'English'
+            	'name' => 'English Modern Language'
             ]
             
         ];
