@@ -15,6 +15,10 @@
 
 Route::get('/', 'HomeController@getIndex')->name('home');
 
+
+//Signup Route
+Route::get('/signup', 'HomeController@getSignup')->name('signup');
+
 // User Routes
 Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 
