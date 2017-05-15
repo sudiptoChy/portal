@@ -38,7 +38,7 @@ class CategoriesTableSeeder extends Seeder
             ],
 
             [
-            	'name' => 'English'
+            	'name' => 'English Modern Language'
             ]
             
         ];
