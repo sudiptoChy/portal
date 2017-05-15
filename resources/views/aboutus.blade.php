@@ -5,7 +5,7 @@
 @section('content')
 
 
-    <div style="margin-top: 15px;" class="row">
+    <div style="margin-top: 70px;" class="row">
     <div class="col-md-12">
       <div class="col-sm-3">
       <div class="card-wrapper">
@@ -23,10 +23,10 @@
             </div>
             <!--Content-->
             <div class="card-block">
-                <h4>Jaber Ahmed Molla bodyBuilder</h4>
+                <h4>Jaber Ahmed</h4>
                 <p style="text-align:center;">Intern Developer At Hexit</p>
                 <!--Triggering button-->
-                <a class="rotate-btn-1" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
+                <a class="rotate-btn-1" data-card="card-1"><i class="fa fa-repeat"></i>View More</a>
             </div>
         </div>
         <!--/.Front Side-->
@@ -46,7 +46,7 @@
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!--Triggering button-->
-            <a class="rotate-btn-1 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
+            <a class="rotate-btn-1 back" data-card="card-1"><i class="fa fa-undo"></i>Back</a>
 
         </div>
         <!--/.Back Side-->
@@ -74,7 +74,7 @@
                 <h4>Sudipto Chowdhury</h4>
                 <p style="text-align:center;">Web Developer At AuthLab</p>
                 <!--Triggering button-->
-                <a class="rotate-btn-2" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
+                <a class="rotate-btn-2" data-card="card-1"><i class="fa fa-repeat"></i>View More</a>
             </div>
         </div>
         <!--/.Front Side-->
@@ -94,7 +94,7 @@
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!--Triggering button-->
-            <a class="rotate-btn-2 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
+            <a class="rotate-btn-2 back" data-card="card-1"><i class="fa fa-undo"></i>Back</a>
 
         </div>
         <!--/.Back Side-->
@@ -122,7 +122,7 @@
                 <h4>Tajul Islam Jony</h4>
                 <p style="text-align:center;">Front-End Deisgner</p>
                 <!--Triggering button-->
-                <a class="rotate-btn-3" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
+                <a class="rotate-btn-3" data-card="card-1"><i class="fa fa-repeat"></i> View More </a>
             </div>
         </div>
         <!--/.Front Side-->
@@ -142,7 +142,7 @@
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!--Triggering button-->
-            <a class="rotate-btn-3 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
+            <a class="rotate-btn-3 back" data-card="card-1"><i class="fa fa-undo"></i>Back</a>
 
         </div>
         <!--/.Back Side-->
@@ -170,7 +170,7 @@
                 <h4>Mohsin Ahmed</h4>
                 <p style="text-align:center;">Database Expert</p>
                 <!--Triggering button-->
-                <a class="rotate-btn-4" data-card="card-1"><i class="fa fa-repeat"></i> Click here to rotate</a>
+                <a class="rotate-btn-4" data-card="card-1"><i class="fa fa-repeat"></i>View More</a>
             </div>
         </div>
         <!--/.Front Side-->
@@ -190,7 +190,7 @@
                 <li><a class="icons-sm li-ic"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!--Triggering button-->
-            <a class="rotate-btn-4 back" data-card="card-1"><i class="fa fa-undo"></i>Rotate Back</a>
+            <a class="rotate-btn-4 back" data-card="card-1"><i class="fa fa-undo"></i>Back</a>
 
         </div>
         <!--/.Back Side-->

@@ -27,11 +27,13 @@
             </div>
             <hr>
             <div style="text-align: center;" class="rate">
-
-            	<h5 style="padding-bottom: 10px;">Rating: 8</h5>
-                <h5 style="margin-top: -8px; padding-bottom: 10px;">Total Post: 10</h5>
-
-            </div>	
+            	<h2><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> 4.5 </i></span></h2>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+              <h2 ><span class="label label-md label-primary"> Total Post(s): 10 </span></h2>
+            </div>
+            	
               <hr>
 
             <div class="card-footer">
