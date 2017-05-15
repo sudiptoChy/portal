@@ -34,7 +34,7 @@ class CategoriesTableSeeder extends Seeder
             ],
 
             [
-            	'name' => 'Business'
+            	'name' => 'Business Administration'
             ],
 
             [
