@@ -51,10 +51,12 @@ class PostController extends Controller
     {
     	
         $post = $this->post->where('slug', '=', $slug)->with('category')->first();
-        $userID = 2;
+        $userID = 1;
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
         $canRate = true;
+
+        $this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
 
         foreach($ratedUser as $user)
         {
@@ -197,6 +199,15 @@ class PostController extends Controller
 
         $postRate->save();
         return redirect()->route('post.show', $post->slug);
+    }
+
+    public function updateUserRating($post_id, $postRating)
+    {
+        $post = $this->post->with('user')->find($post_id);
+        $newRating = ($post->user->rating + $postRating)/2.0;
+        $user = $this->user->find($post->user->id);
+        $user->rating = $newRating;
+        $user->save();
     }
 
     public function getDelete($id)
