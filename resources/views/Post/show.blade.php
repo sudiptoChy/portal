@@ -24,7 +24,7 @@
             <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
           </div>
 
-          <div class="blockright card-block">
+          <div class="card-block">
               @if($post->image)
                 <img src="{{ asset('images/'. $post->image) }}"/>
               @endif
@@ -32,12 +32,18 @@
               <p>{!! $post->body !!}</p>
           </div>
 
+          @if($post->file)
+            <div class="card-block">
+              <div class="thumbnil">
+               <a href={{$post->title}} download="{{$post->file}}" class="btn btn-primary">Download Attached File</a>
+               </div>
+            </div>
+          @endif
+
           <div class="cardfooter">
 
           </div>
           <hr>
-
-          
             
           <div class="rate">
           <form method="post" action="{{ route('post.rating',['post_id' => $post->id, 'user_id'=> $userID ]) }}">
@@ -120,6 +126,13 @@
 
 @section('scripts')
   <script>
-    document.getElementById("btnPlaceOrder").disabled = true; 
+    document.getElementById("btnPlaceOrder").disabled = true;
+    $(document).ready(function() {
+ $(".word").fancybox({
+  'width': 600, // or whatever
+  'height': 320,
+  'type': 'iframe'
+ });
+}); //  ready 
   </script>
 @endsection

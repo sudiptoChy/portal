@@ -11,7 +11,7 @@ use App\Models\PostRate;
 use Session;
 use Purifier;
 use Image;
-use Storage;
+use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
@@ -55,19 +55,22 @@ class PostController extends Controller
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
         $canRate = true;
+        $fileName = $post->file;
+        $file = "files/".$fileName;
 
-        $this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
+        //$this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
 
         foreach($ratedUser as $user)
         {
             if($user == $userID) $canRate = false;
         }
 
-        $data = [
+       $data = [
             'post' => $post,
             'userID' => $userID,
             'postRating' => $postRating,
-            'canRate' => $canRate
+            'canRate' => $canRate,
+            'file' => $file
         ];
 
     	return view('Post.show')->with($data);
@@ -95,7 +98,8 @@ class PostController extends Controller
           'title' => 'required|max:255',
           'category_id' => 'required|integer',
           'body'  => 'required',
-          'feature-image' => 'sometimes|image'
+          'feature-image' => 'sometimes|image',
+          'attached_file' => 'sometimes|mimes:doc,pdf,docx,zip'
         ));
 
         // Making post slug
@@ -116,11 +120,20 @@ class PostController extends Controller
           $image = $request->file('feature-image');
           $fileName = time() . '.' .$image->getClientOriginalExtension();
           $location = public_path('images/'.$fileName);
-          Image::make($image)->resize(800, 400)->save($location);
+          Image::make($image)->resize(888, 600)->save($location);
 
           $post->image = $fileName;
         }
 
+        if($request->hasFile('attached_file')) {
+
+            $file = $request->file('attached_file');
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            $location = public_path('files/');
+            $file->move($location, $fileName);
+
+            $post->file = $fileName;
+        }
 
         $post->save();
         $post->tags()->sync($request->tags, false);
@@ -155,11 +168,12 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'category_id' => 'required|integer',
             'body'  => 'required',
-            'feature-image' => 'image'
+            'feature-image' => 'image',
+            'attached_file' => 'mimes:doc,pdf,docx,zip'
           ));
           
-        $post->title = $request->input('title');
-        $post->category_id = $request->input('category_id');
+        $post->title = $request->title;
+        $post->category_id = $request->category_id;
         $post->body = Purifier::clean($request->input('body'), "youtube"); // Securing post body from malicious codes
 
         if($request->hasFile('feature-image')) {
@@ -176,6 +190,20 @@ class PostController extends Controller
             Storage::delete($oldFileName);
         }
 
+        if($request->hasFile('attached_file')) {
+
+            $file = $request->file('attached_file');
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            $location = public_path('files/');
+            $file->move($location, $fileName);
+
+            $oldFileName = $post->file;
+
+            Storage::delete($oldFileName);
+
+            $post->file = $fileName;
+        }
+
         $post->save();
 
         if (isset($request->tags)) {
@@ -186,7 +214,7 @@ class PostController extends Controller
       
         // Redirect to another page
 
-        return redirect()->route('post.show', $post->id);
+        return redirect()->route('post.show', $post->slug);
     }
 
     public function postRating(Request $request, $post_id, $user_id)
@@ -219,5 +247,16 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->route('home');
+    }
+
+    public function getDownloadFile($post_id)
+    {
+        $post = $this->post->find($post_id);
+        $fileName = $post->file;
+        $mime = $post->file->getClientOriginalMime();
+        $file = "files/".$fileName;
+ 
+        return (new Response($file, 200))
+              ->header('Content-Type', ".pdf");
     }
 }
