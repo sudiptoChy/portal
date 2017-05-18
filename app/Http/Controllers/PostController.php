@@ -49,7 +49,8 @@ class PostController extends Controller
 
     public function getShow($slug)
     {
-    	$post = $this->post->where('slug', '=', $slug)->with('category')->first();
+    	
+        $post = $this->post->where('slug', '=', $slug)->with('category')->first();
         $userID = 2;
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
@@ -188,7 +189,7 @@ class PostController extends Controller
 
     public function postRating(Request $request, $post_id, $user_id)
     {
-        $post = Post::find($user_id);
+        $post = Post::find($post_id);
         $postRate = new PostRate;
         $postRate->post_id = $post_id;
         $postRate->user_id = $user_id;
