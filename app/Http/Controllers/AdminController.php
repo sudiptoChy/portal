@@ -20,7 +20,7 @@ class AdminController extends Controller
     }
     public function getCategories()
     {
-    	$category = Category::all();
+        $category = Category::all();
         return view('admin.categorylist')->withCategory($category);
     }
     public function getCategoriesEdit()
@@ -28,15 +28,40 @@ class AdminController extends Controller
     	$updatecategory = Category::all();
         return view('admin.updatecategory')->withUpdatecategory($updatecategory);
     }
+    public function categoryStore(Request $request)
+    {
+
+        $category = new Category;
+
+        $category->name = $request->category;
+
+        $category->save();
+
+        return redirect()->route('admin.categories');
+    }
+
     public function getTags()
     {
     	$tags = Tag::all();
         return view('admin.taglist')->withTags($tags);
     }
-     public function getTagsEdit()
+
+    public function getTagsEdit()
     {
     	$updatetags = Tag::all();
         return view('admin.updatetags')->withUpdatetags($updatetags);
+    }
+
+    public function tagStore(Request $request)
+    {
+
+          $tag = new Tag;
+
+          $tag->name = $request->tags;
+
+          $tag->save();
+
+          return redirect()->route('admin.tags');
     }
     public function getUser()
     {
