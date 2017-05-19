@@ -23,7 +23,7 @@
     <!-- Custom Fonts -->
     <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
+   <!--  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css"> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -143,13 +143,13 @@
                     <div class="col-md-8">
                     <div class="form-group">
                         <label>Update Tags:</label>
-                         <input type="text" name="tags" placeholder="Tags" class="tm-input form-control tm-input-info"/>
-                        <!-- <button style="margin-top: 10px;" class="btn btn-primary">Add Tags</button> -->
+                         <input type="text" name="tags" class="form-control"/>
+                        <button style="margin-top: 10px;" class="btn btn-primary">Update Tags</button>
                     </div>
                     </div>
                 </div>
 
-                                <div class="row">
+                 <div class="row">
                     <div class="col-md-12">
                         <table class="table table-striped">
                             <thead>
@@ -158,60 +158,17 @@
                                     <th>Tags Name</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                               @foreach($updatetags as $uptag)
                                 <tr>
-                                    <td>01</td>
-                                    <td>Programming</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">Edit</button></a>
-                                        <a href="#"><button class="btn btn-default">Delete</button></a>
-                                    </td>
+                                    <td>{{$uptag->id}}</td>
+                                    <td>{{$uptag->name}}</td>
+                                    <td>{{$uptag->created_at}}</td>
+                                    <td>{{$uptag->updated_at}}</td>
                                 </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>Networking</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>03</td>
-                                    <td>Electronics</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>04</td>
-                                    <td>Circuit</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>05</td>
-                                    <td>Business Administration</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -238,15 +195,15 @@
     <script src="{{asset('js/plugins/morris/morris-data.js')}}"></script>
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script>
-
-    <script type="text/javascript">
+ -->
+    <!-- <script type="text/javascript">
 
         $(".tm-input").tagsManager();
 
-    </script>
+    </script> -->
 
 </body>
 

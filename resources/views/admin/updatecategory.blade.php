@@ -141,12 +141,7 @@
                     <div class="col-md-8">
                     <div class="form-group">
                         <label>Update Category</label>
-                        <select class="form-control" name="category_id" required="true">
-                          <option>Update a catagory</option>
-                          <option value="1">Programming</option>
-                          <option value="2">Networking</option>
-                          <option value="3">Electronics</option>
-                        </select>
+                        <input type="text" name="updatecat" class="form-control">
                         <button style="margin-top: 10px;" class="btn btn-primary">Update Category</button>
                     </div>
                     </div>
@@ -161,66 +156,21 @@
                                     <th>Category Name</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                             <tbody>
+                               @foreach($updatecategory as $upcat)
                                 <tr>
-                                    <td>01</td>
-                                    <td>Programming</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href="#"><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
+                                    <td>{{ $upcat->id }}</td>
+                                    <td>{{ $upcat->name }}</td>
+                                    <td>{{ $upcat->created_at }}</td>
+                                    <td>{{ $upcat->updated_at }}</td>
                                 </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>Networking</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href="#"><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>03</td>
-                                    <td>Electronics</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href="#"><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>04</td>
-                                    <td>Circuit</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href="#"><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>05</td>
-                                    <td>Business Administration</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href="#"><button class="btn btn-default">Edit</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-
             </div>
             <!-- /.container-fluid -->
 
