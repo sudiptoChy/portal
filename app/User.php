@@ -17,6 +17,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\PostRate');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
     use Notifiable;
 
     /**

@@ -88,15 +88,16 @@
 
   <div style="margin-top: 20px;" class="row">
   <div class="col-md-10 col-md-offset-1">
-    <form action="#" method="post" role="form" class="facebook-share-box">
+    <form action="{{route('comments.store', $post->id)}}" method="post" role="form" class="facebook-share-box">
         <div class="panel panel-default">
                       
-                      <div class="panel-heading"><i class="fa fa-comments" aria-hidden="true"> (10)</i></div>
+                      <div class="panel-heading"><i class="fa fa-comments" aria-hidden="true"> {{ $totalComments }}</i></div>
                       <div class="panel-body">
                         <div class="">
-                            <textarea name="message" cols="10" rows="5" id="status_message" class="form-control message" style="height: 100px; overflow: hidden;" placeholder="Write your comment here.."></textarea>
+                            <textarea name="comment" cols="10" rows="5" id="status_message" class="form-control message" style="height: 100px; overflow: hidden;" placeholder="Write your comment here.." required="true"></textarea>
                             <button style="margin-top: -8px;" class="pull-right btn btn-default btn-md"><i class="fa fa-comment" aria-hidden="true"> Comment </i></button>
-                            
+                            <input type="hidden" name="_token" value="{{ Session::token() }}">
+
                         </div>
                       </div>
               <!-- <div style="height: 40px;" class="panel-footer">
@@ -110,15 +111,17 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
+    @foreach($post->comments as $comment)
       <div class="card testimonial-card">
           <div class="card-up default-color-default">
-            <p style="margin-top: 30px; font-style: italic; font-weight: normal;">This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.This is so good post.I like it.</p>
+            <p style="margin-top: 30px; font-style: italic; font-weight: normal;">{{ $comment->comment }}</p>
           </div> 
 
           <div style="margin-left: 15px; width: 70px;" class="avatar">
             <img style="margin-top: 10px;" src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
           </div>
       </div>
+      @endforeach
     </div>
   </div>
 

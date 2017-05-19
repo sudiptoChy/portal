@@ -60,6 +60,7 @@ Route::get('post/delete/{id}', 'PostController@getDelete')->name('post.delete');
 Route::get('/post/{slug}', 'PostController@getShow')->name('post.show');
 Route::post('/post/{post_id}/{user_id}', 'PostController@postRating')->name('post.rating');
 Route::get('/post/file/{post_id}', 'PostController@getDownloadFile')->name('file.download');
+Route::post('/comments/{post_id}', 'CommentsController@store')->name('comments.store');
 
 // Category Routes
 Route::get('/categories', 'CategoryController@getIndex')->name('categories.index');
