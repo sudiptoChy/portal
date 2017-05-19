@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Category;
+use App\Models\Comment;
 use App\User;
 use App\Models\PostRate;
 use Session;
@@ -50,7 +51,8 @@ class PostController extends Controller
     public function getShow($slug)
     {
     	
-        $post = $this->post->where('slug', '=', $slug)->with('category')->first();
+        $post = $this->post->where('slug', '=', $slug)->with('category', 'comments')->first();
+        $totalComments = count($post->comments);
         $userID = 1;
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
@@ -70,7 +72,8 @@ class PostController extends Controller
             'userID' => $userID,
             'postRating' => $postRating,
             'canRate' => $canRate,
-            'file' => $file
+            'file' => $file,
+            'totalComments' => $totalComments
         ];
 
     	return view('Post.show')->with($data);
