@@ -59,6 +59,7 @@ Route::post('post/update/{id}', 'PostController@postEdit')->name('post.update');
 Route::get('post/delete/{id}', 'PostController@getDelete')->name('post.delete');
 Route::get('/post/{slug}', 'PostController@getShow')->name('post.show');
 Route::post('/post/{post_id}/{user_id}', 'PostController@postRating')->name('post.rating');
+Route::get('/post/file/{post_id}', 'PostController@getDownloadFile')->name('file.download');
 
 // Category Routes
 Route::get('/categories', 'CategoryController@getIndex')->name('categories.index');

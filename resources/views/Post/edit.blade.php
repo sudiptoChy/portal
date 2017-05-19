@@ -17,7 +17,7 @@
 
     	<div class="row">
 			<div class="col-md-8">
-			      <form method="POST" action="{{ route('post.update', $post->id) }}" enctype="multipart/form-data">
+			      <form method="POST" action="{{ route('post.update', $post->slug) }}" enctype="multipart/form-data">
 			        <div class="form-group">
 			          <label name="title">Title:</label>
 			          <input id="title" name="title" class="form-control" value="{{ $post->title }}">
@@ -53,6 +53,12 @@
 			          <label name="body">Post Body:</label>
 			          <textarea id="body" name="body" rows="10" class="form-control">{{ $post->body }}</textarea>
 			        </div>
+
+
+			        <div class="form-group">
+              			<label class="control-label">Attach a file(Docs or PDF)</label>
+              			<input id="attached_file" name="attached_file" class="file" type="file">
+            		</div>
 
 			    <div class="col-md-4">
 			      <div class="well">

@@ -24,7 +24,7 @@
             <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
           </div>
 
-          <div class="blockright card-block">
+          <div class="card-block">
               @if($post->image)
                 <img src="{{ asset('images/'. $post->image) }}"/>
               @endif
@@ -32,12 +32,18 @@
               <p>{!! $post->body !!}</p>
           </div>
 
+          @if($post->file)
+            <div class="card-block">
+              <div class="thumbnil">
+               <a href={{$post->title}} download="{{$post->file}}" class="btn btn-primary">Download Attached File</a>
+               </div>
+            </div>
+          @endif
+
           <div class="cardfooter">
 
           </div>
           <hr>
-
-          
             
           <div class="rate">
           <form method="post" action="{{ route('post.rating',['post_id' => $post->id, 'user_id'=> $userID ]) }}">
@@ -45,7 +51,7 @@
             @if($canRate)
               <button style="margin-top: -1.5px;" class="btn btn-sm btn-primary">Rate</button>
             @else
-              <button style="margin-top: -1.5px;" class="btn btn-sm btn-disabled">Rate</button>
+              <button style="margin-top: -1.5px;" disabled="disabled" class="btn btn-sm">Rate</button>
             @endif
              <input type="hidden" name="_token" value="{{ Session::token() }}">
             </div>
@@ -65,7 +71,7 @@
           </div>
         </form>
           <div class="pull-right">
-               <h4 style="margin-top: 1px; margin-right: 7px; margin-bottom: 2px;"><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> {{ $postRating }} </i></span></h4>
+               <h4 style="margin-top: 1px; margin-right: 7px; margin-bottom: 2px;"><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> {{ number_format($postRating, 1, '.', ',') }} </i></span></h4>
             </div>
           </div>
 
@@ -116,4 +122,17 @@
     </div>
   </div>
 
+@endsection
+
+@section('scripts')
+  <script>
+    document.getElementById("btnPlaceOrder").disabled = true;
+    $(document).ready(function() {
+ $(".word").fancybox({
+  'width': 600, // or whatever
+  'height': 320,
+  'type': 'iframe'
+ });
+}); //  ready 
+  </script>
 @endsection
