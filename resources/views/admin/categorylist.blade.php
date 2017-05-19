@@ -138,11 +138,14 @@
 
                 <div class="row">
                     <div class="col-md-8">
+                    <form action="{{ route('admin.category_store') }}" method="POST">
                     <div class="form-group">
                         <label>Add Category</label>
                         <input type="text" name="category" class="form-control">
                         <button style="margin-top: 10px;" class="btn btn-primary">Add Category</button>
+                        <input type="hidden" name="_token" value="{{ Session::token() }}">
                     </div>
+                    </form>
                     </div>
                 </div>
 

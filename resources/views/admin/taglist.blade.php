@@ -141,11 +141,14 @@
 
                 <div class="row">
                     <div class="col-md-8">
+                    <form action="{{ route('admin.tag_store') }}" method="POST">
                     <div class="form-group">
                         <label>Add Tags:</label>
-                         <input type="text" name="tags" placeholder="Tags" class="form-control"/>
+                         <input type="text" name="tags" placeholder="Tags" class="form-control" required="" />
                         <button style="margin-top: 10px;" class="btn btn-primary">Add Tags</button>
+                        <input type="hidden" name="_token" value="{{ Session::token() }}">
                     </div>
+                    </form>
                     </div>
                 </div>
 
