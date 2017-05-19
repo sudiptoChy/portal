@@ -94,7 +94,7 @@
                       <div class="panel-heading"><i class="fa fa-comments" aria-hidden="true"> {{ $totalComments }}</i></div>
                       <div class="panel-body">
                         <div class="">
-                            <textarea name="comment" cols="10" rows="5" id="status_message" class="form-control message" style="height: 100px; overflow: hidden;" placeholder="Write your comment here.."></textarea>
+                            <textarea name="comment" cols="10" rows="5" id="status_message" class="form-control message" style="height: 100px; overflow: hidden;" placeholder="Write your comment here.." required="true"></textarea>
                             <button style="margin-top: -8px;" class="pull-right btn btn-default btn-md"><i class="fa fa-comment" aria-hidden="true"> Comment </i></button>
                             <input type="hidden" name="_token" value="{{ Session::token() }}">
 

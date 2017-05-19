@@ -19,6 +19,10 @@ class CommentsController extends Controller
 
     public function store(Request $request, $post_id)
     {
+    	$this->validate($request, array(
+    		'comment' => 'required|max:255',
+    	));
+
     	$comment = $this->comment;
     	$comment->post_id = $post_id;
     	$comment->user_id = 2;
