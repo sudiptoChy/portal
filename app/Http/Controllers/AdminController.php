@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Category;
+use App\Models\Tag;
 
 class AdminController extends Controller
 {
@@ -12,23 +15,28 @@ class AdminController extends Controller
     }
     public function getPost()
     {
-    	return view('admin.posts');
+    	$posts = Post::all();
+        return view('admin.posts')->withPosts($posts);
     }
     public function getCategories()
     {
-    	return view('admin.categorylist');
+    	$category = Category::all();
+        return view('admin.categorylist')->withCategory($category);
     }
     public function getCategoriesEdit()
     {
-    	return view('admin.updatecategory');
+    	$updatecategory = Category::all();
+        return view('admin.updatecategory')->withUpdatecategory($updatecategory);
     }
     public function getTags()
     {
-    	return view('admin.taglist');
+    	$tags = Tag::all();
+        return view('admin.taglist')->withTags($tags);
     }
      public function getTagsEdit()
     {
-    	return view('admin.updatetags');
+    	$updatetags = Tag::all();
+        return view('admin.updatetags')->withUpdatetags($updatetags);
     }
     public function getUser()
     {

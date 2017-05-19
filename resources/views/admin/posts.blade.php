@@ -150,62 +150,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($posts as $post)
                                 <tr>
-                                    <td>01</td>
-                                    <td>Programming is important for CSE students</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
+                                    <td>{{$post->id}}</td>
+                                    <td>{{ $post->title }}</td>
+                                    <td>{{ $post->created_at }}</td>
+                                    <td>{{ $post->updated_at }}</td>
                                     <td>
                                         <a href=""><button class="btn btn-default">view</button></a>
                                         <a href="#"><button class="btn btn-default">Delete</button></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>Programming is important for CSE students</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">View</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>03</td>
-                                    <td>Programming is important for CSE students</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">View</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>04</td>
-                                    <td>Programming is important for CSE students</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">View</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>05</td>
-                                    <td>Programming is important for CSE students</td>
-                                    <td>12.30pm</td>
-                                    <td>1.50pm</td>
-                                    <td>
-                                        <a href=""><button class="btn btn-default">View</a></button>
-                                        <a href="#"><button class="btn btn-default">Delete</a></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-
             </div>
             <!-- /.container-fluid -->
 
