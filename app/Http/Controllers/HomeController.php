@@ -58,6 +58,17 @@ class HomeController extends Controller
 
         return view('signup');
     }
+
+    public function getSignup2()
+    {
+        return view('signup2');
+    }
+
+    public function getLogin()
+    {
+        return view('login');
+    }
+
     public function getMessage()
     {
         return view('authormessage');

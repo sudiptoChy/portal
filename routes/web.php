@@ -13,15 +13,17 @@
 
 // Route for home
 
-Route::get('/testing', function(){
-	return view('testing');
-});
-
 Route::get('/', 'HomeController@getIndex')->name('home');
 
 
 //Signup Route
 Route::get('/signup', 'HomeController@getSignup')->name('signup');
+
+//Signup2 route
+Route::get('/signuptwo', 'HomeController@getSignup2')->name('signuptwo');
+
+//Login Route
+Route::get('/login', 'HomeController@getLogin')->name('login');
 
 // User Routes
 Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
@@ -45,7 +47,6 @@ Route::get('/about', 'HomeController@getAbout')->name('about');
 
 //Author Route
 Route::get('/author', 'HomeController@getAuthor')->name('author');
-Route::post('/author/message/{from_user_id}/{to_user_id}', 'UserController@sendMessage')->name('author.sendMessage');
 
 //Author message
 Route::get('/author/message', 'HomeController@getMessage')->name('authormessage');
