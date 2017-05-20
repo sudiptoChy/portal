@@ -23,11 +23,15 @@ class AdminController extends Controller
         $category = Category::all();
         return view('admin.categorylist')->withCategory($category);
     }
-    public function getCategoriesEdit()
+    public function getCategoriesEdit($id)
     {
-    	$updatecategory = Category::all();
-        return view('admin.updatecategory')->withUpdatecategory($updatecategory);
+    	$categories = Category::all();
+        $category = Category::find($id);
+        return view('admin.updatecategory')
+                    ->with('categories', $categories)
+                    ->with('category', $category);
     }
+
     public function categoryStore(Request $request)
     {
 
@@ -40,16 +44,39 @@ class AdminController extends Controller
         return redirect()->route('admin.categories');
     }
 
+    public function updateCategory(Request $request, $id)
+    {
+        $category = Category::find($id);
+
+        $category->name = $request->input('updatecat');
+
+        $category->save();
+
+        return redirect()->route('admin.categories');
+    }
+
+    public function destroyCategory($id)
+    {
+        $category = Category::find($id);
+
+        $category->delete();
+
+        return redirect()->route('admin.categories');
+    }
+
     public function getTags()
     {
     	$tags = Tag::all();
         return view('admin.taglist')->withTags($tags);
     }
 
-    public function getTagsEdit()
+    public function getTagsEdit($id)
     {
-    	$updatetags = Tag::all();
-        return view('admin.updatetags')->withUpdatetags($updatetags);
+    	$tags = Tag::all();
+        $tag = Tag::find($id);
+        return view('admin.updatetags')
+                ->with('tags', $tags)
+                ->with('tag', $tag);
     }
 
     public function tagStore(Request $request)
@@ -63,6 +90,27 @@ class AdminController extends Controller
 
           return redirect()->route('admin.tags');
     }
+
+    public function updateTag(Request $request, $id)
+    {
+        $tag = Tag::find($id);
+
+        $tag->name = $request->input('tags');
+
+        $tag->save();
+
+        return redirect()->route('admin.tags');
+    }
+
+   /* public function destroyTag($id)
+    {
+        $tag = Tag::find($id);
+
+        $tag->delete();
+
+        return redirect()->route('admin.tags');
+    }*/
+
     public function getUser()
     {
     	return view('admin.adduser');

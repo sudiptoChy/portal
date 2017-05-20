@@ -170,7 +170,7 @@
                                     <td>{{ $cat->updated_at }}</td>
                                     <td>
                                         <a href="{{ route('admin.categoryedit', $cat->id) }}"><button class="btn btn-default">Edit</button></a>
-                                        <a href="#"><button class="btn btn-default">Delete</button></a>
+                                        <a href="{{ route('admin.category_delete', $cat->id) }}"><button class="btn btn-default">Delete</button></a>
                                     </td>
                                 </tr>
                                 @endforeach

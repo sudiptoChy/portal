@@ -141,11 +141,14 @@
 
                 <div class="row">
                     <div class="col-md-8">
+                    <form action="{{ route('admin.tag_update', $tag->id) }}" method="POST">
                     <div class="form-group">
                         <label>Update Tags:</label>
-                         <input type="text" name="tags" class="form-control"/>
+                         <input type="text" name="tags" value="{{ $tag->name }}" class="form-control"/>
                         <button style="margin-top: 10px;" class="btn btn-primary">Update Tags</button>
+                        <input type="hidden" name="_token" value="{{ Session::token() }}">
                     </div>
+                    </form>
                     </div>
                 </div>
 
@@ -161,7 +164,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               @foreach($updatetags as $uptag)
+                               @foreach($tags as $uptag)
                                 <tr>
                                     <td>{{$uptag->id}}</td>
                                     <td>{{$uptag->name}}</td>

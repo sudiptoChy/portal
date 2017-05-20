@@ -26,7 +26,7 @@
         
 		<div class="md-form">
 			<i class="fa fa-user prefix"></i>
-		    <input style="margin-left: 30px;" type="text" id="date-picker-example" class="form-control datepicker">
+		    <input style="margin-left: 30px;" type="date" id="date-picker-example" class="form-control datepicker">
 		    <label for="date-picker-example">Enter Your Name</label>
 		</div>
 

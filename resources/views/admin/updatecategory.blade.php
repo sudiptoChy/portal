@@ -139,11 +139,14 @@
 
                 <div class="row">
                     <div class="col-md-8">
+                    <form action="{{ route('admin.category_update', $category->id) }}" method="POST">
                     <div class="form-group">
                         <label>Update Category</label>
-                        <input type="text" name="updatecat" class="form-control">
+                        <input type="text" name="updatecat" value="{{ $category->name }}" class="form-control">
                         <button style="margin-top: 10px;" class="btn btn-primary">Update Category</button>
+                        <input type="hidden" name="_token" value="{{ Session::token() }}">
                     </div>
+                    </form>
                     </div>
                 </div>
 
@@ -159,7 +162,7 @@
                                 </tr>
                             </thead>
                              <tbody>
-                               @foreach($updatecategory as $upcat)
+                               @foreach($categories as $upcat)
                                 <tr>
                                     <td>{{ $upcat->id }}</td>
                                     <td>{{ $upcat->name }}</td>
