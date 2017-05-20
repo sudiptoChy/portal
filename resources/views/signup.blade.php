@@ -7,32 +7,33 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 		  	
-        <div class="card">
+        <div class="card" style="height: 580px;">
     		<div class="card-block">
 
         <!--Header-->
         <div class="text-center">
-            <h3 style="color: black; padding-top: 10px;">Sign Up</h3>
+            <h3 style="color: black; padding-top: 10px; padding-top: 170px;">Sign Up</h3>
             <hr>
         </div>
 
         <!--Body-->
-        <div class="md-form">
-            <i class="fa fa-key prefix"></i>
-            <input style="margin-left: 30px;" type="text" id="form3" class="form-control">
-            <label for="form3">Your Id</label>
-        </div>
 
-        
-		<div class="md-form">
-			<i class="fa fa-user prefix"></i>
-		    <input style="margin-left: 30px;" type="date" id="date-picker-example" class="form-control datepicker">
-		    <label for="date-picker-example">Enter Your Name</label>
-		</div>
+        <form method="POST" action="">
+            <div class="form-group">
+              <label name="title">Your Id:</label>
+              <input style="border: 1px solid #66afe9; width: 97%;" id="title" name="title" class="form-control" placeholder="Enter Your Id">
+            </div>
 
+            <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                <label>Select Date: </label>
+                <input style="border: 1px solid #66afe9; width: 190%;" class="form-control" type="text" readonly />
+                <span style="display: table;" class="input-group-addon"><i class="fa fa-calendar"></i></span>
+            </div>
+
+        </form>
 
         <div class="text-center">
-            <button class="btn btn-deep-orange">Sign Up</button>
+            <a href="{{ route('signuptwo') }}"><button class="btn btn-primary btn-lg" style="width: 99%; height: 40px; margin-left: -3px;">Next</button></a>
         </div>
 
     </div>

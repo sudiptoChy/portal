@@ -19,6 +19,12 @@ Route::get('/', 'HomeController@getIndex')->name('home');
 //Signup Route
 Route::get('/signup', 'HomeController@getSignup')->name('signup');
 
+//Signup2 route
+Route::get('/signuptwo', 'HomeController@getSignup2')->name('signuptwo');
+
+//Login Route
+Route::get('/login', 'HomeController@getLogin')->name('login');
+
 // User Routes
 Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 

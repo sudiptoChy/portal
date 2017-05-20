@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="{{asset('css/project.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/select2.min.css')}}">
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
 @yield('stylesheet');
 
 </head>

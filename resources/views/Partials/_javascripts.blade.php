@@ -20,6 +20,19 @@
     
     <script type="text/javascript" src="{{asset('js/select2.min.js')}}"></script>
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());;
+});
+
+    </script>
+
+
     <script>
       
       $(window).scroll(function(){
