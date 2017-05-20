@@ -91,14 +91,14 @@ Route::get('/tag/delete/{id}', 'TagController@getDelete')->name('tag.delete');
 
 //Admin
 
-Route::get('/admin/index', 'AdminController@getIndex');
+Route::get('/admin/index', 'AdminController@getIndex')->name('admin.index');
 Route::get('/admin/posts', 'AdminController@getPost')->name('admin.posts');
 Route::get('/admin/categories', 'AdminController@getCategories')->name('admin.categories');
 Route::get('/admin/categories/edit/{id}', 'AdminController@getCategoriesEdit')->name('admin.categoryedit');
 Route::get('/admin/tags', 'AdminController@getTags')->name('admin.tags');
 Route::get('/admin/tags/edit/{id}', 'AdminController@getTagsEdit')->name('admin.tagsedit');
 Route::get('/admin/users', 'AdminController@getUser')->name('admin.users');
-Route::get('/admin/dashboard', 'AdminController@getDashboard')->name('admin.dashboard');
+//Route::get('/admin/dashboard', 'AdminController@getDashboard')->name('admin.dashboard');
 Route::post('/admin/category/store', 'AdminController@categoryStore')->name('admin.category_store');
 Route::post('/admin/tag/store', 'AdminController@tagStore')->name('admin.tag_store');
 Route::post('/admin/category/update/{id}', 'AdminController@updateCategory')->name('admin.category_update');

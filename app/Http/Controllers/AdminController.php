@@ -6,12 +6,26 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
+use App\User;
 
 class AdminController extends Controller
 {
     public function getIndex()
     {
-        return view('admin.index');
+        $totalCategories = Category::get()->count();
+        $totalPosts = Post::get()->count();
+        $totalTags = Tag::get()->count();
+        $totalUsers = User::get()->count();
+
+        $data = [
+
+            'totalCategories' => $totalCategories,
+            'totalPosts' => $totalPosts,
+            'totalTags' => $totalTags,
+            'totalUsers' => $totalUsers
+        ];
+
+        return view('admin.index')->with($data);
     }
     public function getPost()
     {
@@ -114,9 +128,5 @@ class AdminController extends Controller
     public function getUser()
     {
     	return view('admin.adduser');
-    }
-    public function getDashboard()
-    {
-    	return view('admin.index');
     }
 }
