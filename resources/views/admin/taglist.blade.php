@@ -172,7 +172,7 @@
                                     <td>{{$tag->created_at}}</td>
                                     <td>{{$tag->updated_at}}</td>
                                     <td>
-                                        <a href="{{route('admin.tagsedit', $tag->id)}}"><button class="btn btn-default">Edit</button></a>
+                                        <a href="{{route('admin.tagsedit', $tag->id) }}"><button class="btn btn-default">Edit</button></a>
                                         <a href="#"><button class="btn btn-default">Delete</button></a>
                                     </td>
                                 </tr>
