@@ -47,7 +47,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <form method="POST" action="{{ route('author.sendMessage', ['from_user_id' => 2, 'to_user_id' => 2] )}}">
+                      <form method="POST" action="{{-- {{ route('author.sendMessage', ['from_user_id' => 2, 'to_user_id' => 2] )}} --}}">
                       <div class="modal-body">
                           <div class="form-group">
                             <label for="message-text" class="form-control-label">Message:</label>
