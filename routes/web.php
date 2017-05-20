@@ -42,6 +42,9 @@ Route::get('/about', 'HomeController@getAbout')->name('about');
 //Author Route
 Route::get('/author', 'HomeController@getAuthor')->name('author');
 
+//Author message
+Route::get('/author/message', 'HomeController@getMessage')->name('authormessage');
+
 //Message Route
 
 Route::get('/user/message', 'UserController@getMessage')->name('message');

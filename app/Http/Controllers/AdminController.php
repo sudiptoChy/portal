@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     public function getIndex()
     {
-    	return view('admin.index');
+        return view('admin.index');
     }
     public function getPost()
     {
