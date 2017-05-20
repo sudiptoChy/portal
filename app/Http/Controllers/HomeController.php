@@ -58,4 +58,8 @@ class HomeController extends Controller
 
         return view('signup');
     }
+    public function getMessage()
+    {
+        return view('authormessage');
+    }
 }

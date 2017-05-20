@@ -37,9 +37,9 @@
               <hr>
 
             <div class="card-footer">
-               <button style="margin-left: 400px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever=""><i class="fa fa-send" aria-hidden="true"> Send Message </i></button>
+               <a href="{{ route('authormessage') }}"><button style="margin-left: 400px;" type="button" class="btn btn-primary" d><i class="fa fa-send" aria-hidden="true"> Send Message </i></button></a>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <!--      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -55,13 +55,15 @@
                           </div>
                       </div>
                       <div class="modal-footer">
+
                         <button type="button" class="btn btn-primary"><i class="fa fa-send" aria-hidden="true"> Send message </i></button>
                         </form>
                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
+
             </div>
         </div>
         <!--/.Card-->
