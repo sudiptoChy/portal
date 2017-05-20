@@ -47,17 +47,17 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
+                      <form method="POST" action="{{ route('author.sendMessage', ['from_user_id' => 2, 'to_user_id' => 2] )}}">
                       <div class="modal-body">
-                        <form>
                           <div class="form-group">
                             <label for="message-text" class="form-control-label">Message:</label>
                             <textarea class="form-control" id="message-text" style="height: 100px;" "></textarea>
                           </div>
-                        </form>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary"><i class="fa fa-send" aria-hidden="true"> Send message </i></button>
+                        </form>
+                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
@@ -67,6 +67,5 @@
         <!--/.Card-->
     </div>
   </div>
-
 
 @endsection
