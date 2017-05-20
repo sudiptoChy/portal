@@ -98,10 +98,8 @@ Route::get('/admin/categories/edit/{id}', 'AdminController@getCategoriesEdit')->
 Route::get('/admin/tags', 'AdminController@getTags')->name('admin.tags');
 Route::get('/admin/tags/edit/{id}', 'AdminController@getTagsEdit')->name('admin.tagsedit');
 Route::get('/admin/users', 'AdminController@getUser')->name('admin.users');
-//Route::get('/admin/dashboard', 'AdminController@getDashboard')->name('admin.dashboard');
 Route::post('/admin/category/store', 'AdminController@categoryStore')->name('admin.category_store');
 Route::post('/admin/tag/store', 'AdminController@tagStore')->name('admin.tag_store');
 Route::post('/admin/category/update/{id}', 'AdminController@updateCategory')->name('admin.category_update');
 Route::post('/admin/tag/update/{id}', 'AdminController@updateTag')->name('admin.tag_update');
 Route::get('/admin/category/delete/{id}', 'AdminController@destroyCategory')->name('admin.category_delete');
-/*Route::get('/admin/tag/delete/{id}', 'AdminController@destroyTag')->name('admin.tag_delete');*/
