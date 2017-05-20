@@ -16,7 +16,7 @@
         <ul class="nav navbar-nav navbar-right">
         
           <li class="nav-item">
-            <a id="show_login" class="nav-link waves-effect waves-light" href="login.html">
+            <a id="show_login" class="nav-link waves-effect waves-light" href="{{route('login')}}">
               <i class="fa fa-sign-in"></i>
               <span class="hidden-sm-down">Log In</span>
             </a>
