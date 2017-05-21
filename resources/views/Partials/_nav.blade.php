@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="{{ route('message') }}" class=""><i style="color: white;" class="fa fa-envelope-o"></i></a>
+          <a href="{{ route('user.message') }}" class=""><i style="color: white;" class="fa fa-envelope-o"></i></a>
         </li>
           <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <b class="caret"></b></a>

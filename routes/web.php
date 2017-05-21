@@ -21,9 +21,6 @@ Route::post('/auth/login', 'LoginController@login')->name('login');
 Route::post('/auth/logout', 'LoginController@logout')->name('logout');
 
 
-Route::get('/signuptwo', 'HomeController@getSignup2')->name('signuptwo');
-
-
 // Route for home
 
 Route::get('/', 'HomeController@getIndex')->name('home');
@@ -38,6 +35,7 @@ Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 //userProfile Route
 
 Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
+Route::get('/user/message', 'ProfileController@getMessage')->name('user.message');
 
 //EditProfile Route
 
@@ -48,14 +46,9 @@ Route::get('/about', 'HomeController@getAbout')->name('about');
 
 
 //Author Route
-Route::get('/author', 'HomeController@getAuthor')->name('author');
-
-//Author message
-Route::get('/author/message', 'HomeController@getMessage')->name('authormessage');
-
-//Message Route
-
-Route::get('/user/message', 'UserController@getMessage')->name('message');
+Route::get('/author/{id}', 'HomeController@getAuthor')->name('author');
+Route::get('/author/message/{id}', 'HomeController@getMessage')->name('message');
+Route::post('/author/message/{id}', 'HomeController@postMessage')->name('message_post');
 
 //Change password Route
 

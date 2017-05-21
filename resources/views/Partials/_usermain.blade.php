@@ -6,7 +6,7 @@
 
 	<body>
 
-		@include('Partials._usernav')
+		@include('Partials._nav')
 
 			<div class="maincontent padding-top-130">
 				<div class="container">

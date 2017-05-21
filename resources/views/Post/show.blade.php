@@ -10,7 +10,7 @@
           <div class="card-up default-color-default">
             <div class="right">
              <a href=""><h4 class="card-title">{{ $post->title }}</h4></a>
-                <h5 class="author">Author: Jaber Ahmed</h5>
+                <h5 class="author">{{ $post->user->name }}</h5>
                 <p style="font-weight: normal; font-style: italic; font-size: 13px; line-height: 6px;"> Category: <a href="{{ route('category.show', $post->category->id) }}"> {{$post->category->name}} </a> </p>
                 @if ($post->created_at->diffInMonths(Carbon\Carbon::now()) >= 1)
                     <p style="font-size: 13px; line-height: 15px;" class="time"> {{ $post->created_at->format('j M Y , g:ia') }} </p>

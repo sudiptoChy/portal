@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Tag;
@@ -31,7 +32,7 @@ class PostController extends Controller
 
     public function getIndex()
     {
-        $posts = $this->post->latest()->paginate(5);
+        $posts = $this->post->with('user')->latest()->paginate(5);
         $PostByRating = $this->post->orderBy('rating', 'DSC')->take(5)->get();
         $categories = $this->category->all();
         $tags = $this->tag->all();
@@ -50,10 +51,9 @@ class PostController extends Controller
 
     public function getShow($slug)
     {
-    	
-        $post = $this->post->where('slug', '=', $slug)->with('category', 'comments')->first();
+        $post = $this->post->where('slug', '=', $slug)->with('user', 'category', 'comments')->first();
         $totalComments = count($post->comments);
-        $userID = 1;
+        $userID = Auth::user()->id;
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
         $canRate = true;
@@ -111,9 +111,12 @@ class PostController extends Controller
 
         // Store in the database
 
+        $userId = Auth::user()->id;
+
         $post = $this->post;
         $post->title = $request->title;
         $post->slug = $this->slug;
+        $post->user_id = $userId;
         $post->category_id = $request->category_id;
         $post->body = Purifier::clean($request->input('body'), "youtube"); // Securing post body from malicious codes.
 
@@ -220,8 +223,9 @@ class PostController extends Controller
         return redirect()->route('post.show', $post->slug);
     }
 
-    public function postRating(Request $request, $post_id, $user_id)
+    public function postRating(Request $request, $post_id)
     {
+        $user_id = Auth::user()->id;
         $post = Post::find($post_id);
         $postRate = new PostRate;
         $postRate->post_id = $post_id;

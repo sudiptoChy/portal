@@ -9,11 +9,10 @@
 		@include('Partials._nav')
 
 			<div class="maincontent padding-top-130">
-				<div class="container">
-
+				<div class="container" style="padding-top: 10px;">
+					@include('Partials._messages')
 			    	@yield('content')
 			    	@include('Partials._footer')
-
 				</div>
 			</div>
 
