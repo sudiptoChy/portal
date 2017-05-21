@@ -16,7 +16,9 @@
 Route::get('/auth/register', 'RegisterController@showRegistrationForm')->name('user.register');
 Route::post('/auth/register/check', 'RegisterController@checkUser')->name('user.register-check');
 Route::post('/auth/register/student', 'RegisterController@register')->name('student.register');
-Route::get('/auth/login', 'AuthController@showLoginForm')->name('user.login');
+Route::get('/auth/login', 'LoginController@index')->name('user.login');
+Route::post('/auth/login', 'LoginController@login')->name('login');
+Route::post('/auth/logout', 'LoginController@logout')->name('logout');
 
 
 Route::get('/signuptwo', 'HomeController@getSignup2')->name('signuptwo');

@@ -24,7 +24,7 @@
                             <a class="fa fa-bell" style="padding: 10px;" href="#">Mohsin Ahmed commented in your post</a>
                         </li>
                     </ul>
-                </li>
+              </li>
         <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"></a>
                   <ul class="dropdown-menu">
@@ -74,7 +74,7 @@
             <input id="rightshift" class="form-control" type="text" placeholder="Search">
         </form> -->
         </div>
-        </div>
+      </div>
     </div>
       </nav>
 <!--/.Navbar-->
