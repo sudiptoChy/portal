@@ -15,8 +15,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('student_id')->default(0);
             $table->string('name');
             $table->string('email');
+            $table->date('birthday')->default(Carbon\Carbon::now());
             $table->string('password');
             $table->decimal('rating', 5, 2)->default(0);
             $table->rememberToken();

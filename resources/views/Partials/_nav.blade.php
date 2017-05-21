@@ -16,13 +16,13 @@
         <ul class="nav navbar-nav navbar-right">
         
           <li class="nav-item">
-            <a id="show_login" class="nav-link waves-effect waves-light" href="{{route('login')}}">
+            <a id="show_login" class="nav-link waves-effect waves-light" href="{{route('user.login')}}">
               <i class="fa fa-sign-in"></i>
               <span class="hidden-sm-down">Log In</span>
             </a>
           </li>
           <li class="nav-item">
-            <a id="show_signup" class="nav-link waves-effect waves-light" href="{{ route('signup') }}">
+            <a id="show_signup" class="nav-link waves-effect waves-light" href="{{ route('user.register') }}">
               <i class="fa fa-user"></i>
               <span class="hidden-sm-down">Sign Up</span>
             </a>

@@ -11,27 +11,27 @@
 |
 */
 
+// auth routes
+
+Route::get('/auth/register', 'RegisterController@showRegistrationForm')->name('user.register');
+Route::post('/auth/register/check', 'RegisterController@checkUser')->name('user.register-check');
+Route::post('/auth/register/student', 'RegisterController@register')->name('student.register');
+Route::get('/auth/login', 'AuthController@showLoginForm')->name('user.login');
+
+
+Route::get('/signuptwo', 'HomeController@getSignup2')->name('signuptwo');
+
+
 // Route for home
 
 Route::get('/', 'HomeController@getIndex')->name('home');
 
 
-//Signup Route
-Route::get('/signup', 'HomeController@getSignup')->name('signup');
-
-//Signup2 route
-Route::get('/signuptwo', 'HomeController@getSignup2')->name('signuptwo');
-
-//Login Route
-Route::get('/login', 'HomeController@getLogin')->name('login');
-
-// User Routes
-Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
-
 // User Home Routes (testing)
 
 Route::get('/user', 'PostController@getIndex')->name('home.user');
-
+// User Routes
+Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 
 //userProfile Route
 
