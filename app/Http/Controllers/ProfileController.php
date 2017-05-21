@@ -12,7 +12,9 @@ class ProfileController extends Controller
 {
     public function getIndex(){
 
-    	return view('userprofile');
+    	$id = Auth::user()->id;
+        $user = User::find($id);
+        return view('userprofile')->with('user', $user);
     }
     public function getEdit(){
 
@@ -26,7 +28,7 @@ class ProfileController extends Controller
     public function getMessage()
     {
         $id = Auth::user()->id;
-        $messages = Message::with('user')->where('to_user_id', '=', $id)->get();
+        $messages = Message::with('user')->where('to_user_id', '=', $id)->where('status', '=', 0)->get();
         return view('message')->with('messages', $messages);
     }
 

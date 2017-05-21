@@ -24,8 +24,10 @@
           <tr style="font-weight: normal;">
             <td>#</td>
             <td>{{ substr(strip_tags($message->body), 0, 35) }} {{ strlen(strip_tags($message->body)) > 35 ? "..." : ""}}</td>
-            <<td><a href="{{ route('author', $message->user->id) }}"> {{ $message->user->name }} </a> </td>
-            <td type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="">View</td>
+            <td><a href="{{ route('author', $message->user->id) }}"> {{ $message->user->name }} </a> </td>
+            <td>
+             <a href="{{route('user.message_show', $message->id)}}" type="button" class="btn btn-primary" data-whatever="">View</a>
+            </td>
             <td type="button" class="btn btn-danger">Delete</td>
           </tr>
       @endforeach
@@ -33,7 +35,6 @@
       </table>
     </div>
 </div>
-
             
         </div>
     </div>

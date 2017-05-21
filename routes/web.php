@@ -36,6 +36,8 @@ Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 
 Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
 Route::get('/user/message', 'ProfileController@getMessage')->name('user.message');
+Route::get('/user/message/view/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_show');
+Route::post('/user/message/reply/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_reply');
 
 //EditProfile Route
 

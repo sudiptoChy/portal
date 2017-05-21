@@ -18,16 +18,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="{{ route('user.message') }}" class=""><i style="color: white;" class="fa fa-envelope-o"></i></a>
+        <a href="{{route('user.message')}}" class=""> 
+        <i style="color: white;" class="fa fa-envelope-o"> (@yield('totalMessage'))</i></a>
         </li>
           <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a class="fa fa-bell" style="padding: 10px;" href="#">Mohsin Ahmed commented in your post</a>
-                        </li>
-                    </ul>
-              </li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"> (@yield('totalNotification'))</i> <b class="caret"></b></a>
+                <ul class="dropdown-menu alert-dropdown">
+                    <li>
+                        <a class="fa fa-bell" style="padding: 10px;" href="#">Mohsin Ahmed commented in your post</a>
+                    </li>
+                </ul>
+          </li>
         <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"></a>
                   <ul class="dropdown-menu">
@@ -61,16 +62,13 @@
                 <a class="nav-link" href="{{route('home')}}"><p>Home</p></a>
              </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><p>Bookmarks</p></a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="#"><p>Popular Posts</p></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><p>Catagories</p></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><p>About</p></a>
+                <a class="nav-link" href="{{ route('about') }}"><p>About Us</p></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('post.create') }}"><p>Create Post</p></a>
@@ -115,9 +113,6 @@
                 <a class="nav-link" href="{{route('home') }}"><p>Home</p></a>
              </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><p>Bookmarks</p></a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="#"><p>Popular Posts</p></a>
             </li>
             <li class="nav-item">
@@ -125,10 +120,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}"><p>About Us</p></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('post.create') }}"><p>Create Post</p></a>
             </li>
         </ul>
          <!--Search form-->
