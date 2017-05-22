@@ -118,3 +118,4 @@ Route::post('/admin/tag/store', 'AdminController@tagStore')->name('admin.tag_sto
 Route::post('/admin/category/update/{id}', 'AdminController@updateCategory')->name('admin.category_update');
 Route::post('/admin/tag/update/{id}', 'AdminController@updateTag')->name('admin.tag_update');
 Route::get('/admin/category/delete/{id}', 'AdminController@destroyCategory')->name('admin.category_delete');
+Route::get('/admin/login', 'AdminController@getAdmin');
