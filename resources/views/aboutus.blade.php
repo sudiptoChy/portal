@@ -133,7 +133,7 @@
             <!--Content-->
             <h4>About me</h4>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium quaerat?</p>
+            <p> “I am not a Sunday morning inside four walls with clean blood and organized drawers. I am the hurricane setting fire to the forests at night when no one else is alive or awake however you choose to see it and I live in my own flames sometimes burning too bright and too wild to make things last or handle myself or anyone else and so I run. run run run far and wide until my bones ache and lungs split and it feels good. Hear that people? It feels good because I am the slave and ruler of my own body and I wish to do with it exactly as I please” </p>
             <hr>
             <!--Social Icons-->
             <ul class="inline-ul">
@@ -168,7 +168,7 @@
             <!--Content-->
             <div class="card-block">
                 <h4>Mohsin Ahmed</h4>
-                <p style="text-align:center;">Front-End designer</p>
+                <p style="text-align:center;">Front-End Designer</p>
                 <!--Triggering button-->
                 <a class="rotate-btn-4" data-card="card-1"><i class="fa fa-repeat"></i>View More</a>
             </div>
@@ -181,7 +181,7 @@
             <!--Content-->
             <h4>About me</h4>
             <hr>
-            <p>Hi, this is Mohsin Ahmed. I am a Front-End Developer. I like most Cricket games. </p>
+            <p>Hi, this is Mohsin Ahmed. I am a Front-End Developer. I like most Cricket games.   </p>
             <hr>
             <!--Social Icons-->
             <ul class="inline-ul">
