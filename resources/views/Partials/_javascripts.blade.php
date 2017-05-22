@@ -190,6 +190,7 @@ $('#submit').click(function(e){
         var dob = $('#dob').val();
         var luh = {"ajaxurl":"http:\/\/www.lus.ac.bd\/wp-admin\/admin-ajax.php"};
         var token = $('#token').val();
+        var redirectUrl = "{{ URL::route('user.registrationForm', '#data#') }}";
         $.ajax({
           url : luh.ajaxurl,
           method: 'POST',
@@ -198,9 +199,14 @@ $('#submit').click(function(e){
               $.ajax({
                 url: "{{ URL::route('user.register-check') }}",
                 method: 'POST',
-                data: {'datas': data, '_token': token},
+                data: {'datas': data, '_token': token, 'dob' : dob},
                 success: function(r) {
-                  console.log(r);
+                  var link = document.createElement('a');
+                  link.href = redirectUrl.replace('#data#', r.name + '+' + r.dob + '+' + r.id);
+
+                  // console.log(link)
+                  document.body.appendChild(link);
+                  link.click();
                 }
               })
           }

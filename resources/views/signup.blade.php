@@ -21,12 +21,12 @@
         {{-- <form method="POST" action="{{route('user.register-check')}}"> --}}
             <div class="form-group">
               <label name="title">Your Id:</label>
-              <input type="text" style="border: 1px solid #66afe9; width: 97%;" name="id" class="form-control" placeholder="Enter Your Id" id="un">
+              <input type="text" style="border: 1px solid #66afe9; width: 97%;" name="id" class="form-control" placeholder="Enter Your Id" id="un"> 
             </div>
 
             <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
                 <label>Select Date: </label>
-                <input style="border: 1px solid #66afe9; width: 190%;" class="form-control" type="text" name="birthday" id="dob" />
+                <input style="border: 1px solid #66afe9; width: 190%;" class="form-control" type="text" name="birthday" id="dob"/>
                 <span style="display: table;" class="input-group-addon"><i class="fa fa-calendar"></i></span>
             </div>
 
