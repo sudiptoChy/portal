@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->integer('student_id')->default(0);
             $table->string('name');
             $table->string('email');
+            $table->string('department');
             $table->string('avatar')->default('default.jpg');
             $table->date('birthday')->default(Carbon\Carbon::now());
             $table->string('password');

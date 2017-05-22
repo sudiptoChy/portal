@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-md-8">
-            @foreach($posts as $post)
+            @foreach($PostByRating as $post)
               <div class="card testimonial-card">
                   <div class="card-up default-color-default">
                       <div class="right">
@@ -78,10 +78,10 @@
                     @foreach($UserByRating as $user)
                       <div class="totalcontsection">
                         <div class="leftimage">
-                          <a href="{{ route('author', $user->id) }}"><img src="/uploads/avatars/{{$user->avatar}}" class="img-circle" alt="images"/></a>
+                          <a href="{{ route('user.profile') }}"><img src="/uploads/avatars/{{$user->avatar}}" class="img-circle" alt="images"/></a>
                         </div>
                         <div class="rightname">
-                          <h4><a href="{{ route('author', $user->id) }}">{{ $user->name }}</a></h4>                
+                          <h4><a href="{{ route('user.profile') }}">{{ $user->name }}</a></h4>                
                         </div>
                       </div>
                     @endforeach

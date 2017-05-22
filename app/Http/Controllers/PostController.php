@@ -52,19 +52,36 @@ class PostController extends Controller
     public function getShow($slug)
     {
         $post = $this->post->where('slug', '=', $slug)->with('user', 'category', 'comments')->first();
+        $commentators = [];
+
+        foreach($post->comments as $comment) {
+            $user = $this->user->find($comment->user_id);
+            $commentators[$user->avatar] = $comment->comment;
+        }
+
         $totalComments = count($post->comments);
-        $userID = Auth::user()->id;
+
+        if(Auth::check()) {
+            $userID = Auth::user()->id;
+        } else {
+            $userID = null;
+        }
+        
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
         $canRate = true;
         $fileName = $post->file;
         $file = "files/".$fileName;
 
-        //$this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
-
-        foreach($ratedUser as $user)
-        {
-            if($user == $userID) $canRate = false;
+        if(Auth::check()) {
+            $this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
+        }
+        
+        if(Auth::check()) {
+            foreach($ratedUser as $user)
+            {
+                if($user == $userID || $user == Auth::user()->id) $canRate = false;
+            }
         }
 
        $data = [
@@ -73,7 +90,8 @@ class PostController extends Controller
             'postRating' => $postRating,
             'canRate' => $canRate,
             'file' => $file,
-            'totalComments' => $totalComments
+            'totalComments' => $totalComments,
+            'commentators' => $commentators
         ];
 
     	return view('Post.show')->with($data);
@@ -100,6 +118,7 @@ class PostController extends Controller
         $this->validate($request, array(
           'title' => 'required|max:255',
           'category_id' => 'required|integer',
+          'tags[]' => 'required',
           'body'  => 'required',
           'feature-image' => 'sometimes|image',
           'attached_file' => 'sometimes|mimes:doc,pdf,docx,zip'
@@ -249,11 +268,11 @@ class PostController extends Controller
     {
         $post = $this->post->find($id);
         $post->tags()->detach();
-        Storage::delete($post->image);
+        //Storage::delete($post->image);
 
         $post->delete();
 
-        return redirect()->route('home');
+        return redirect()->route('showPostsByUser');
     }
 
     public function getDownloadFile($post_id)
@@ -265,5 +284,28 @@ class PostController extends Controller
  
         return (new Response($file, 200))
               ->header('Content-Type', ".pdf");
+    }
+
+    public function showPostsByUser($id) {
+        $postsByUser = $this->user->with('posts')->find($id);
+        return view('myPosts')->with('postsByUser', $postsByUser);
+    }
+
+    public function showPopularPosts() {
+        $posts = $this->post->with('user')->latest()->paginate(5);
+        $PostByRating = $this->post->with('user')->orderBy('rating', 'DSC')->take(5)->get();
+        $categories = $this->category->all();
+        $tags = $this->tag->all();
+        $UserByRating = $this->user->orderBy('rating', 'DSC')->take(5)->get();
+
+        $data = [
+          'posts' => $posts,
+          'tags' => $tags,
+          'categories' => $categories,
+          'PostByRating' => $PostByRating,
+          'UserByRating' => $UserByRating
+        ];
+
+        return view('popularposts')->with($data);
     }
 }
