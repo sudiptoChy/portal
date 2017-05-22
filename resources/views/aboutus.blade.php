@@ -168,7 +168,7 @@
             <!--Content-->
             <div class="card-block">
                 <h4>Mohsin Ahmed</h4>
-                <p style="text-align:center;">Front-end designer</p>
+                <p style="text-align:center;">Front-End designer</p>
                 <!--Triggering button-->
                 <a class="rotate-btn-4" data-card="card-1"><i class="fa fa-repeat"></i>View More</a>
             </div>
@@ -181,7 +181,7 @@
             <!--Content-->
             <h4>About me</h4>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium quaerat?</p>
+            <p>Hi, this is Mohsin Ahmed. I am a Front-End Developer. I like most Cricket games. </p>
             <hr>
             <!--Social Icons-->
             <ul class="inline-ul">
