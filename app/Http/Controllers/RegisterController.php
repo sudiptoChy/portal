@@ -17,7 +17,11 @@ class RegisterController extends Controller
 
     public function checkUser(Request $request)
     {
-    	$student = Student::find($request->id);
+    	
+       $a = $request->all();
+       dd($a['datas']['student']['name']);
+
+        $student = Student::find($request->id);
     	if($student) {
     		if($student->birthday == $request->birthday) {
     		$birthday = $request->birthday;

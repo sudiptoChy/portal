@@ -183,6 +183,31 @@ $(".rotate-btn-4.back").click(function(){
 
 </script>
 
+<script> 
+$('#submit').click(function(e){
+        e.preventDefault();
+        var sid = $('#un').val();
+        var dob = $('#dob').val();
+        var luh = {"ajaxurl":"http:\/\/www.lus.ac.bd\/wp-admin\/admin-ajax.php"};
+        var token = $('#token').val();
+        $.ajax({
+          url : luh.ajaxurl,
+          method: 'POST',
+          data: 'action=get-result&student_id='+sid+'&birth_date='+dob,
+          success : function(data){
+              $.ajax({
+                url: "{{ URL::route('user.register-check') }}",
+                method: 'POST',
+                data: {'datas': data, '_token': token},
+                success: function(r) {
+                  console.log(r);
+                }
+              })
+          }
+        });
+    })
+</script>
+
 
   </body>
 </html>
