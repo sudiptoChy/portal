@@ -18,7 +18,7 @@
 
         <!--Body-->
 
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('login') }}">
             <div class="form-group">
               <label name="title">Your Id:</label>
               <input style="border: 1px solid #66afe9; width: 97%;" name="id" class="form-control" placeholder="Enter Your Id">
@@ -26,15 +26,16 @@
 
             <div class="form-group">
               <label name="title">Password:</label>
-              <input style="border: 1px solid #66afe9; width: 97%;" name="password" class="form-control" placeholder="Enter Your password">
+              <input type="password" style="border: 1px solid #66afe9; width: 97%;" name="password" class="form-control" placeholder="Enter Your password">
             </div>
 
-        </form>
-
-        <div class="text-center">
+            <div class="text-center">
             <a href=""><button class="btn btn-primary" style="width: 99%; height: 40px; margin-left: -3px;">Login</button></a>
-        </div>
+            </div>
 
+            {{ csrf_field() }}
+
+        </form>
     </div>
 </div>
 <!--/Form without header-->

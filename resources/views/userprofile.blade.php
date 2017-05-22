@@ -1,4 +1,4 @@
-@extends('Partials._usermain')
+@extends('Partials.main')
 
 @section('title' , '| User Profile')
 
@@ -15,7 +15,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="avatar" style="margin-top: 15px;">
-                    <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
+                    <img src="/uploads/avatars/{{$user->avatar}}" class="img-circle img-responsive">
                 </div>
 
               <div class="">
@@ -28,38 +28,26 @@
                 <table class="table table-inverse table-hover">
                     <tbody>
                       <tr>
-                        <td>Department:</td>
-                        <td>CSE</td>
-                      </tr>
-                      <tr>
                         <td>Name:</td>
-                        <td>Jaber Ahmed</td>
+                        <td>{{ $user->name }}</td>
                       </tr>
+
+                      <tr>
+                        <td>ID:</td>
+                        <td>{{ $user->student_id }}</td>
+                      </tr>
+
                       <tr>
                         <td>Date of Birth:</td>
-                        <td>02/02/1992</td>
-                      </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Gender:</td>
-                        <td>Male</td>
-                      </tr>
-                        <tr>
-                        <td>Home Address:</td>
-                        <td>Vatalia,Sylhet</td>
+                        <td>{{ $user->birthday }}</td>
                       </tr>
                       <tr>
                         <td>Email:</td>
-                        <td>jaber.hexit@gmail.com</td>
-                      </tr>
-                      <tr>
-                        <td>Phone Number:</td>
-                        <td>+8801965238949</td>  
+                        <td>{{ $user->email }}</td>
                       </tr>
                       <tr>
                         <td>Rating:</td>
-                        <td>4.5</td>  
+                        <td>{{ $user->rating }}</td>  
                       </tr>
                      
                     </tbody>

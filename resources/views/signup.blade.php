@@ -18,23 +18,24 @@
 
         <!--Body-->
 
-        <form method="POST" action="">
+        <form method="POST" action="{{route('user.register-check')}}">
             <div class="form-group">
               <label name="title">Your Id:</label>
-              <input style="border: 1px solid #66afe9; width: 97%;" id="title" name="title" class="form-control" placeholder="Enter Your Id">
+              <input style="border: 1px solid #66afe9; width: 97%;" id="title" name="id" class="form-control" placeholder="Enter Your Id">
             </div>
 
-            <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+            <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
                 <label>Select Date: </label>
-                <input style="border: 1px solid #66afe9; width: 190%;" class="form-control" type="text" readonly />
+                <input style="border: 1px solid #66afe9; width: 190%;" class="form-control" type="text" name="birthday" />
                 <span style="display: table;" class="input-group-addon"><i class="fa fa-calendar"></i></span>
             </div>
 
-        </form>
+            <div class="text-center">
+            <button class="btn btn-primary btn-lg" style="width: 99%; height: 40px; margin-left: -3px;">Next</button>
+            {{csrf_field()}}
+            </div>
 
-        <div class="text-center">
-            <a href="{{ route('signuptwo') }}"><button class="btn btn-primary btn-lg" style="width: 99%; height: 40px; margin-left: -3px;">Next</button></a>
-        </div>
+        </form>
 
     </div>
 </div>

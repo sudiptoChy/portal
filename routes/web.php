@@ -11,31 +11,34 @@
 |
 */
 
+// auth routes
+
+Route::get('/auth/register', 'RegisterController@showRegistrationForm')->name('user.register');
+Route::post('/auth/register/check', 'RegisterController@checkUser')->name('user.register-check');
+Route::post('/auth/register/student', 'RegisterController@register')->name('student.register');
+Route::get('/auth/login', 'LoginController@index')->name('user.login');
+Route::post('/auth/login', 'LoginController@login')->name('login');
+Route::post('/auth/logout', 'LoginController@logout')->name('logout');
+
+
 // Route for home
 
 Route::get('/', 'HomeController@getIndex')->name('home');
 
 
-//Signup Route
-Route::get('/signup', 'HomeController@getSignup')->name('signup');
-
-//Signup2 route
-Route::get('/signuptwo', 'HomeController@getSignup2')->name('signuptwo');
-
-//Login Route
-Route::get('/login', 'HomeController@getLogin')->name('login');
-
-// User Routes
-Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
-
 // User Home Routes (testing)
 
 Route::get('/user', 'PostController@getIndex')->name('home.user');
-
+// User Routes
+Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 
 //userProfile Route
 
 Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
+Route::post('/user/update/avatar', 'ProfileController@updateAvatar')->name('update.avatar');
+Route::get('/user/message', 'ProfileController@getMessage')->name('user.message');
+Route::get('/user/message/view/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_show');
+Route::post('/user/message/reply/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_reply');
 
 //EditProfile Route
 
@@ -46,14 +49,9 @@ Route::get('/about', 'HomeController@getAbout')->name('about');
 
 
 //Author Route
-Route::get('/author', 'HomeController@getAuthor')->name('author');
-
-//Author message
-Route::get('/author/message', 'HomeController@getMessage')->name('authormessage');
-
-//Message Route
-
-Route::get('/user/message', 'UserController@getMessage')->name('message');
+Route::get('/author/{id}', 'HomeController@getAuthor')->name('author');
+Route::get('/author/message/{id}', 'HomeController@getMessage')->name('message');
+Route::post('/author/message/{id}', 'HomeController@postMessage')->name('message_post');
 
 //Change password Route
 

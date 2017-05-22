@@ -8,6 +8,8 @@ use App\Models\Tag;
 use App\Models\Category;
 use App\User;
 use Session;
+use App\Models\Message;
+use Auth;
 
 
 class HomeController extends Controller
@@ -27,21 +29,39 @@ class HomeController extends Controller
 
     public function getIndex()
     {
-        $posts = $this->post->latest()->paginate(5);
+        $posts = $this->post->with('user')->latest()->paginate(5);
         $PostByRating = $this->post->orderBy('rating', 'DSC')->take(5)->get();
         $categories = $this->category->all();
         $tags = $this->tag->all();
         $UserByRating = $this->user->orderBy('rating', 'DSC')->take(5)->get();
 
-        $data = [
-          'posts' => $posts,
-          'tags' => $tags,
-          'categories' => $categories,
-          'PostByRating' => $PostByRating,
-          'UserByRating' => $UserByRating
-        ];
+        if(Auth::check()) {
+            
+            $totalMessage = $this->totalMessage();
+            $totalNotification = $this->totalNotification();
 
-        return view('welcome')->with($data);
+            $data = [
+              'posts' => $posts,
+              'tags' => $tags,
+              'categories' => $categories,
+              'PostByRating' => $PostByRating,
+              'UserByRating' => $UserByRating,
+              'totalMessage' => $totalMessage,
+              'totalNotification' => $totalNotification
+            ];
+
+            return view('welcome')->with($data);
+        } else {
+            $data = [
+              'posts' => $posts,
+              'tags' => $tags,
+              'categories' => $categories,
+              'PostByRating' => $PostByRating,
+              'UserByRating' => $UserByRating
+            ];
+
+            return view('welcome')->with($data);
+        }
     }
 
     public function getAbout(){
@@ -49,28 +69,45 @@ class HomeController extends Controller
         return view('aboutus');
     }
 
-    public function getAuthor()
+    public function getAuthor($id)
     {
-        return view('author');
+        $author = $this->user->find($id);
+        $totalPost = $this->post->where('user_id', '=', $id)->get()->count();
+        return view('author')
+                ->with('author', $author)
+                ->with('totalPost', $totalPost);
     }
 
-    public function getSignup(){
-
-        return view('signup');
+    public function getMessage($id)
+    {
+        $author = $this->user->find($id);
+        return view('authormessage')->with('author', $author);
     }
 
-    public function getSignup2()
+    public function postMessage(Request $request, $id)
     {
-        return view('signup2');
+        $message = new Message;
+
+        $message->to_user_id = $id;
+        $message->from_user_id = Auth::user()->id;
+        $message->body = $request->message;
+        $message->status = 0;
+
+        $message->save();
+
+        Session:: flash('success', 'Message sent successfully!');
+        return redirect()->back();
     }
 
-    public function getLogin()
+    public function totalMessage()
     {
-        return view('login');
+        $id = Auth::user()->id;
+        $totalMessage = Message::with('user')->where('to_user_id', '=', $id)->where('status', '=', 0)->get()->count();
+        return $totalMessage;
     }
 
-    public function getMessage()
+    public function totalNotification()
     {
-        return view('authormessage');
+        return 5;
     }
 }

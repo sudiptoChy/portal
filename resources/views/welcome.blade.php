@@ -11,7 +11,7 @@
                   <div class="card-up default-color-default">
                       <div class="right">
                           <h4 class="card-title">{{ $post->title }}</h4>
-                          <a href="{{ route('author') }}"><h5 class="author">Author: Jaber Ahmed</h5></a>
+                          <a href="{{ route('author', $post->user->id) }}"><h5 class="author">Author: {{ $post->user->name }}</h5></a>
                           @if ($post->created_at->diffInMonths(Carbon\Carbon::now()) >= 1)
                           <p class="time"> {{ $post->created_at->format('j M Y , g:ia') }} </p>
                           @else
@@ -22,7 +22,7 @@
 
                   <!--User image-->
                   <div class="avatar">
-                      <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
+                      <img src="/uploads/avatars/{{$post->user->avatar}}" class="img-circle img-responsive">
                   </div>
 
                   <!--Post Body-->
@@ -55,7 +55,7 @@
                     @foreach($PostByRating as $post)
                       <div class="total">
                         <div class="leftimage">
-                          <a href="#"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"></a>
+                          <a href="#"><img src="/uploads/avatars/{{$post->user->avatar}}" class="img-circle" alt="images"></a>
                         </div>
 
                         <div class="rightname">
@@ -78,7 +78,7 @@
                     @foreach($UserByRating as $user)
                       <div class="totalcontsection">
                         <div class="leftimage">
-                          <a href="{{ route('user.profile') }}"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"/></a>
+                          <a href="{{ route('user.profile') }}"><img src="/uploads/avatars/{{$user->avatar}}" class="img-circle" alt="images"/></a>
                         </div>
                         <div class="rightname">
                           <h4><a href="{{ route('user.profile') }}">{{ $user->name }}</a></h4>                
