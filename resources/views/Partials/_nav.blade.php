@@ -62,14 +62,16 @@
                 <a class="nav-link" href="{{route('home')}}"><p>Home</p></a>
              </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><p>Popular Posts</p></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><p>Catagories</p></a>
+                <a class="nav-link" href="{{route('post.popular')}}"><p>Popular Posts</p></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}"><p>About Us</p></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('showPostsByUser', Auth::user()->id) }}"><p>My Posts</p></a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('post.create') }}"><p>Create Post</p></a>
             </li>
@@ -113,10 +115,7 @@
                 <a class="nav-link" href="{{route('home') }}"><p>Home</p></a>
              </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><p>Popular Posts</p></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><p>Catagories</p></a>
+                <a class="nav-link" href="{{route('post.popular')}}"><p>Popular Posts</p></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}"><p>About Us</p></a>

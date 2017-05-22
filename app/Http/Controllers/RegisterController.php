@@ -7,6 +7,7 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Student;
 use App\User;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -17,35 +18,46 @@ class RegisterController extends Controller
 
     public function checkUser(Request $request)
     {
-    	$student = Student::find($request->id);
-    	if($student) {
-    		if($student->birthday == $request->birthday) {
-    		$birthday = $request->birthday;
-    		$id = $request->id;
-    		$name = $student->name;
-    		return view('signup2')
-    				->with('birthday', $birthday)
-    				->with('id', $id)
-    				->with('name', $name);
-	    	} else {
-	    		return redirect()->back();
-	    	}
-    	} else {
-    		return redirect()->back();
-    	}
+    	
+       $a = $request->all();
+       $dob = $request->get('dob');
+       $id = $a['datas']['student']['id'];
+       $name = $a['datas']['student']['name'];
+       $dep = $a['datas']['student']['department'];
+
+  
+        return response()->json([
+            'name' => $name,
+            'id' => $id,
+            'dob' => $dob,
+            'dep' => $dep
+        ]);
+      
     }
 
     public function register(UserRequest $request)
     {
-        $user = new User;
-        $user->student_id = $request->id;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->birthday = $request->birthday;
-        $user->password = bcrypt($request->password);
+        $userId = User::where('student_id', '=', $request->student_id)->first();
+        $userEmail = User::where('email', '=', $request->email)->first();
 
-        $user->save();
+        if($userId || $userEmail) {
+            
+            Session::flash('danger', 'This email or ID has already taken!');
+            return redirect()->back();
 
-        return redirect()->route('user.login');
+        } else {
+           
+            $user = new User;
+            $user->student_id = $request->id;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->department = $request->dep;
+            $user->birthday = $request->birthday;
+            $user->password = bcrypt($request->password);
+
+            $user->save();
+
+            return redirect()->route('user.login');
+        }
     }
 }

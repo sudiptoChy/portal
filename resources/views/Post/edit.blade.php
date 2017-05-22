@@ -60,27 +60,14 @@
               			<input id="attached_file" name="attached_file" class="file" type="file">
             		</div>
 
-			    <div class="col-md-4">
-			      <div class="well">
-			        <dl class="horizontal">
-			          <dt>Created at:</dt>
-			          <dd>{{ date('M j, Y h:i a', strtotime($post->created_at)) }}</dd>
-			        </dl>
-
-			        <dl class="horizontal">
-			          <dt>Last Updated:</dt>
-			          <dd>{{ date('M j, Y h:i a', strtotime($post->updated_at)) }}</dd>
-			        </dl>
-			        <hr>
-
-			        <div class="row">
-			          <div class="col-sm-6">
-			            <a href="#" class="btn btn-danger btn-block">Cancel</a>
-			          </div>
-
-			          <div class="col-sm-6">
-			            <input type="submit" value="Save Changes" class="btn btn-success  btn-lg">
+			        <div class="form-group" style="display: inline-block;">
+			            
+			            <input type="submit" class="btn btn-warning btn-block" value="Save Changes">
 			            <input type="hidden" name="_token" value="{{ Session::token() }}">
+			            <a href="{{route('showPostsByUser', Auth::user()->id)}}" class="btn btn-danger btn-block">Cancel</a>
+
+			        </div>
+
 			    	</form>
           </div>
         </div>

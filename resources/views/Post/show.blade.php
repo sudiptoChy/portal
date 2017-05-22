@@ -21,7 +21,7 @@
           </div> 
 
           <div class="avatar">
-            <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
+            <img src="/uploads/avatars/{{$post->user->avatar}}" class="img-circle img-responsive">
           </div>
 
           <div class="card-block">
@@ -111,14 +111,14 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-    @foreach($post->comments as $comment)
+    @foreach($commentators as $index => $commentator)
       <div class="card testimonial-card">
           <div class="card-up default-color-default">
-            <p style="margin-top: 30px; font-style: italic; font-weight: normal;">{{ $comment->comment }}</p>
+            <p style="margin-top: 30px; font-style: italic; font-weight: normal;">{{ $commentator }}</p>
           </div> 
 
           <div style="margin-left: 15px; width: 70px;" class="avatar">
-            <img style="margin-top: 10px;" src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
+            <img style="margin-top: 10px;" src="/uploads/avatars/{{$index}}" class="img-circle img-responsive">
           </div>
       </div>
       @endforeach

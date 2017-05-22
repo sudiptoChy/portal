@@ -16,6 +16,21 @@
 Route::get('/auth/register', 'RegisterController@showRegistrationForm')->name('user.register');
 Route::post('/auth/register/check', 'RegisterController@checkUser')->name('user.register-check');
 Route::post('/auth/register/student', 'RegisterController@register')->name('student.register');
+
+Route::get('/auth/register/student/{data}', function($data){
+	$data = explode('+',$data);
+
+	$data = [
+		'name' => $data[0],
+		'birthday' => $data[1],
+		'id' => $data[2],
+		'dep' => $data[3]
+	];
+
+	return view('signup2', $data);
+
+})->name('user.registrationForm');
+
 Route::get('/auth/login', 'LoginController@index')->name('user.login');
 Route::post('/auth/login', 'LoginController@login')->name('login');
 Route::post('/auth/logout', 'LoginController@logout')->name('logout');
@@ -59,6 +74,8 @@ Route::get('/user/profile/changepass', 'ProfileController@editPass')->name('pass
 
 
 // Post Routes
+Route::get('/post/show/popular', 'PostController@showPopularPosts')->name('post.popular');
+Route::get('/post/show/{user_id}', 'PostController@showPostsByUser')->name('showPostsByUser');
 Route::get('/post/create', 'PostController@getCreate')->name('post.create');
 Route::post('/post/store', 'PostController@postCreate')->name('post.store');
 Route::get('/post/edit/{slug}', 'PostController@getEdit')->name('post.edit');
