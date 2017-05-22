@@ -14,13 +14,14 @@
             </div>
 
             <!--Avatar-->
-            <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%288%29.jpg" class="img img-circle img-responsive">
+            <div class="avatar"><img src="/uploads/avatars/{{$author->avatar}}">
             </div>
 
             <div class="card-block-1">
                 <!--Name-->
                 <h4 class="card-title">{{ $author->name }}</h4>
                 <h4>{{ $author->student_id }}</h4>
+                <h4>{{ $author->department }}</h4>
                 <h4>{{ $author->email }}</h4>
                 <!--Quotation-->
             </div>

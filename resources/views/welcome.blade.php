@@ -78,10 +78,10 @@
                     @foreach($UserByRating as $user)
                       <div class="totalcontsection">
                         <div class="leftimage">
-                          <a href="{{ route('user.profile') }}"><img src="/uploads/avatars/{{$user->avatar}}" class="img-circle" alt="images"/></a>
+                          <a href="{{ route('author', $user->id) }}"><img src="/uploads/avatars/{{$user->avatar}}" class="img-circle" alt="images"/></a>
                         </div>
                         <div class="rightname">
-                          <h4><a href="{{ route('user.profile') }}">{{ $user->name }}</a></h4>                
+                          <h4><a href="{{ route('author', $user->id) }}">{{ $user->name }}</a></h4>                
                         </div>
                       </div>
                     @endforeach

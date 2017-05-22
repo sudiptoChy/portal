@@ -60,7 +60,13 @@ class PostController extends Controller
         }
 
         $totalComments = count($post->comments);
-        $userID = Auth::user()->id;
+
+        if(Auth::check()) {
+            $userID = Auth::user()->id;
+        } else {
+            $userID = null;
+        }
+        
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
         $canRate = true;
@@ -71,9 +77,11 @@ class PostController extends Controller
             $this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
         }
         
-        foreach($ratedUser as $user)
-        {
-            if($user == $userID || $user == Auth::user()->id) $canRate = false;
+        if(Auth::check()) {
+            foreach($ratedUser as $user)
+            {
+                if($user == $userID || $user == Auth::user()->id) $canRate = false;
+            }
         }
 
        $data = [
@@ -110,6 +118,7 @@ class PostController extends Controller
         $this->validate($request, array(
           'title' => 'required|max:255',
           'category_id' => 'required|integer',
+          'tags[]' => 'required',
           'body'  => 'required',
           'feature-image' => 'sometimes|image',
           'attached_file' => 'sometimes|mimes:doc,pdf,docx,zip'
