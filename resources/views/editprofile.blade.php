@@ -15,16 +15,20 @@
               <div class="col-md-12">
                   <div class="col-md-3">
                   <div class="avatar" style="margin-left: 20px; margin-top: 5px;">
-                      <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
+                      <img src="/uploads/avatars/{{$user->avatar}}" class="img-circle img-responsive">
                   </div>
 
                   <div>
-                  <a style="margin-bottom: 5px;" href="{{ route('password.change') }}" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-md btn-default">Change Password</a>
+                    <form enctype="multipart/form-data" action="{{route('update.avatar')}}" method="POST"> 
+                      <input type="file" name="avatar">
+                      <input type="hidden" name="_token" value="{{ Session::token() }}">
+                      <input type="submit" class="btn btn-md btn-default" value="Submit">
+                    </form>
                   </div>
                 </div>
 
               <div class="col-md-8">
-                <form method="POST" action="#">
+                <form method="POST" action="">
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-12">
@@ -52,6 +56,9 @@
                           <div class="col-md-10 col-md-offset-2">
                             <button class="btn btn-success"> Update</button>
                             <button class="btn btn-primary"> Back</button>
+                          
+                          <a style="margin-bottom: 5px;" href="{{ route('password.change') }}" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-md btn-default">Change Password</a>
+
                           </div>
                       </div>
                     </div>

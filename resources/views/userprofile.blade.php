@@ -15,7 +15,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="avatar" style="margin-top: 15px;">
-                    <img src="{{asset('images/dummy.jpg')}}" class="img-circle img-responsive">
+                    <img src="/uploads/avatars/{{$user->avatar}}" class="img-circle img-responsive">
                 </div>
 
               <div class="">

@@ -33,7 +33,7 @@ class PostController extends Controller
     public function getIndex()
     {
         $posts = $this->post->with('user')->latest()->paginate(5);
-        $PostByRating = $this->post->orderBy('rating', 'DSC')->take(5)->get();
+        $PostByRating = $this->post->with('user')->orderBy('rating', 'DSC')->take(5)->get();
         $categories = $this->category->all();
         $tags = $this->tag->all();
         $UserByRating = $this->user->orderBy('rating', 'DSC')->take(5)->get();

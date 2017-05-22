@@ -30,7 +30,7 @@
                 </ul>
           </li>
         <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/uploads/avatars/{{Auth::user()->avatar}}" class="img-circle" alt="images"></a>
                   <ul class="dropdown-menu">
                         <li>
                           <h5 style="text-align: center;">{{ Auth::user()->name }}</h5>
