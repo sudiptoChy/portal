@@ -5,35 +5,42 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-		  	
-        <div class="card">
-    		<div class="card-block">
+    <div class="col-xs-3">
+        <i style="margin-left: 570px; margin-top: 40px; color: #333;" class="fa fa-user fa-5x"></i>
+        <h3 style="color: #333; margin-left: 500px; font-size: 20px; width: 300px;">Sign Up to ResearchPortal</h3>
+    </div>
+    </div>
 
-        <!--Header-->
-        <div class="text-center">
-            <h3 style="color: black; padding-top: 10px;">Sign Up</h3>
-            <hr>
-        </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-4">
+            
+        <div style="border-radius: 5px; height: 330px; margin-bottom: 70px; padding-top: 65px; margin-top: 10px; margin-left: -10px;" class="card">
+            <div class="card-block">
 
         <!--Body-->
-        <div class="md-form">
-            <i class="fa fa-key prefix"></i>
-            <input style="margin-left: 30px;" type="text" id="form3" class="form-control">
-            <label for="form3">Your Id</label>
-        </div>
 
-        
-		<div class="md-form">
-			<i class="fa fa-user prefix"></i>
-		    <input style="margin-left: 30px;" type="text" id="date-picker-example" class="form-control datepicker">
-		    <label for="date-picker-example">Enter Your Name</label>
-		</div>
+        {{-- <form method="POST" action="{{route('user.register-check')}}"> --}}
+            <div class="form-group">
+
+              <label name="title">Your Id:</label>
+              <input type="text" name="id" class="form-control" placeholder="Enter Your Id" id="un"> 
+            </div>
+
+            <div id="datepicker" class="input-group date from-group" data-date-format="yyyy-mm-dd">
+                <label>Select Date: </label>
+                <input  class="form-control" type="text" name="birthday" id="dob"/>
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+            </div>
 
 
-        <div class="text-center">
-            <button class="btn btn-deep-orange">Sign Up</button>
-        </div>
+            <div class="form-group">
+
+            <button class="btn btn-primary btn-lg" style="width: 99%; height: 40px; margin-left: -3px;" id="submit"> <span class="center">Next <span></button>
+
+            <input type="hidden" id="token" value="{{csrf_token()}}">
+            </div>
+
+       {{--  </form> --}}
 
     </div>
 </div>
@@ -43,4 +50,10 @@
         </div>
     </div>
 
+
 @endsection
+
+<script type="text/javascript">
+
+</script>
+

@@ -62,6 +62,11 @@
             </div>
 
             <div class="form-group">
+              <label class="control-label">Attach a file(Docs or PDF)</label>
+              <input id="attached_file" name="attached_file" class="file" type="file">
+            </div>
+
+            <div class="form-group">
 	            <input type="submit" value="Create Post" class="btn btn-primary btn-lg">
 	            <input type="hidden" name="_token" value="{{ Session::token() }}">
             </div>
@@ -73,6 +78,10 @@
 @endsection
 
 @section('scripts')
+
+  <script type="text/javascript">
+    $('#attached_file').fileinput();
+  </script>
 
   <script type="text/javascript">
     $('.select2-multi').select2();

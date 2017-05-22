@@ -1,4 +1,4 @@
-@extends('Partials._usermain')
+@extends('Partials.main')
 
 @section('title' , '| User')
 

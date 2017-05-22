@@ -24,16 +24,16 @@
                             <a class="fa fa-bell" style="padding: 10px;" href="#">Mohsin Ahmed commented in your post</a>
                         </li>
                     </ul>
-                </li>
+              </li>
         <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('images/dummy.jpg')}}" class="img-circle" alt="images"></a>
                   <ul class="dropdown-menu">
                          <li>
-                            <a href="{{route('user.profile')}}"><i class="fa fa-fw fa-user"></i>Profile</a>
+                            <a href="{{route('user.profile')}}"><i class="fa fa-fw fa-user"></i> Profile </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i>Logout</a>
+                            <a href="#"><i class="fa fa-fw fa-logout-off"></i> Logout </a>
                         </li>
                  </ul>
           </li>
@@ -74,7 +74,7 @@
             <input id="rightshift" class="form-control" type="text" placeholder="Search">
         </form> -->
         </div>
-        </div>
+      </div>
     </div>
       </nav>
 <!--/.Navbar-->

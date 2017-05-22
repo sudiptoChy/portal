@@ -20,6 +20,19 @@
     
     <script type="text/javascript" src="{{asset('js/select2.min.js')}}"></script>
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());;
+});
+
+    </script>
+
+
     <script>
       
       $(window).scroll(function(){
@@ -154,18 +167,53 @@ $(".rotate-btn-4.back").click(function(){
 
 <!-- For author profile modals -->
 
- <script>
+<script>
 
-        $('#exampleModal').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          var modal = $(this)
-          modal.find('.modal-title').text('New message to ' + recipient)
-          modal.find('.modal-body input').val(recipient)
-})
+    $('#exampleModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = button.data('whatever')
+      // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this)
+      modal.find('.modal-title').text('New message to ' + recipient)
+      modal.find('.modal-body input').val(recipient)
+      modal.onclick('button')
+  })
 
-    </script>
+</script>
+
+<script> 
+$('#submit').click(function(e){
+        e.preventDefault();
+        var sid = $('#un').val();
+        var dob = $('#dob').val();
+        var luh = {"ajaxurl":"http:\/\/www.lus.ac.bd\/wp-admin\/admin-ajax.php"};
+        var token = $('#token').val();
+        var redirectUrl = "{{ URL::route('user.registrationForm', '#data#') }}";
+        $.ajax({
+          url : luh.ajaxurl,
+          method: 'POST',
+          data: 'action=get-result&student_id='+sid+'&birth_date='+dob,
+          success : function(data){
+              $.ajax({
+                url: "{{ URL::route('user.register-check') }}",
+                method: 'POST',
+                data: {'datas': data, '_token': token, 'dob' : dob},
+                success: function(r) {
+                  var link = document.createElement('a');
+                  link.href = redirectUrl.replace('#data#', r.name + '+' + r.dob + '+' + r.id);
+
+                  // console.log(link)
+                  document.body.appendChild(link);
+                  link.click();
+                }
+              })
+          }
+        });
+    })
+</script>
+
+
   </body>
 </html>

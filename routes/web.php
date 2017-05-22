@@ -11,25 +11,48 @@
 |
 */
 
+// auth routes
+
+Route::get('/auth/register', 'RegisterController@showRegistrationForm')->name('user.register');
+Route::post('/auth/register/check', 'RegisterController@checkUser')->name('user.register-check');
+Route::post('/auth/register/student', 'RegisterController@register')->name('student.register');
+
+Route::get('/auth/register/student/{data}', function($data){
+	$data = explode('+',$data);
+
+	$data = [
+		'name' => $data[0],
+		'birthday' => $data[1],
+		'id' => $data[2]
+	];
+
+	return view('signup2', $data);
+
+})->name('user.registrationForm');
+
+Route::get('/auth/login', 'LoginController@index')->name('user.login');
+Route::post('/auth/login', 'LoginController@login')->name('login');
+Route::post('/auth/logout', 'LoginController@logout')->name('logout');
+
+
 // Route for home
 
 Route::get('/', 'HomeController@getIndex')->name('home');
 
 
-//Signup Route
-Route::get('/signup', 'HomeController@getSignup')->name('signup');
-
-// User Routes
-Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
-
 // User Home Routes (testing)
 
 Route::get('/user', 'PostController@getIndex')->name('home.user');
-
+// User Routes
+Route::get('/user/show/{id}', 'UserController@show')->name('user.show');
 
 //userProfile Route
 
 Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
+Route::post('/user/update/avatar', 'ProfileController@updateAvatar')->name('update.avatar');
+Route::get('/user/message', 'ProfileController@getMessage')->name('user.message');
+Route::get('/user/message/view/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_show');
+Route::post('/user/message/reply/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_reply');
 
 //EditProfile Route
 
@@ -40,11 +63,9 @@ Route::get('/about', 'HomeController@getAbout')->name('about');
 
 
 //Author Route
-Route::get('/author', 'HomeController@getAuthor')->name('author');
-
-//Message Route
-
-Route::get('/user/message', 'UserController@getMessage')->name('message');
+Route::get('/author/{id}', 'HomeController@getAuthor')->name('author');
+Route::get('/author/message/{id}', 'HomeController@getMessage')->name('message');
+Route::post('/author/message/{id}', 'HomeController@postMessage')->name('message_post');
 
 //Change password Route
 
@@ -59,6 +80,8 @@ Route::post('post/update/{id}', 'PostController@postEdit')->name('post.update');
 Route::get('post/delete/{id}', 'PostController@getDelete')->name('post.delete');
 Route::get('/post/{slug}', 'PostController@getShow')->name('post.show');
 Route::post('/post/{post_id}/{user_id}', 'PostController@postRating')->name('post.rating');
+Route::get('/post/file/{post_id}', 'PostController@getDownloadFile')->name('file.download');
+Route::post('/comments/{post_id}', 'CommentsController@store')->name('comments.store');
 
 // Category Routes
 Route::get('/categories', 'CategoryController@getIndex')->name('categories.index');
@@ -77,3 +100,18 @@ Route::post('/tag/store', 'TagController@postCreate')->name('tag.store');
 Route::get('/tag/edit/{id}', 'TagController@getEdit')->name('tag.edit');
 Route::post('/tag/update/{id}', 'TagController@postEdit')->name('tag.update');
 Route::get('/tag/delete/{id}', 'TagController@getDelete')->name('tag.delete');
+
+//Admin
+
+Route::get('/admin/index', 'AdminController@getIndex')->name('admin.index');
+Route::get('/admin/posts', 'AdminController@getPost')->name('admin.posts');
+Route::get('/admin/categories', 'AdminController@getCategories')->name('admin.categories');
+Route::get('/admin/categories/edit/{id}', 'AdminController@getCategoriesEdit')->name('admin.categoryedit');
+Route::get('/admin/tags', 'AdminController@getTags')->name('admin.tags');
+Route::get('/admin/tags/edit/{id}', 'AdminController@getTagsEdit')->name('admin.tagsedit');
+Route::get('/admin/users', 'AdminController@getUser')->name('admin.users');
+Route::post('/admin/category/store', 'AdminController@categoryStore')->name('admin.category_store');
+Route::post('/admin/tag/store', 'AdminController@tagStore')->name('admin.tag_store');
+Route::post('/admin/category/update/{id}', 'AdminController@updateCategory')->name('admin.category_update');
+Route::post('/admin/tag/update/{id}', 'AdminController@updateTag')->name('admin.tag_update');
+Route::get('/admin/category/delete/{id}', 'AdminController@destroyCategory')->name('admin.category_delete');

@@ -25,4 +25,9 @@ class Post extends Model
     {
         return $this->hasMany('App\Models\PostRate');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

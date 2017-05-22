@@ -1,9 +1,8 @@
-@extends('Partials._usermain')
+@extends('Partials.main')
 
 @section('title' , '| User Profile')
 
 @section('content')
-
 
  <div style="margin-top: 5px;" class="row">
     <div class="col-md-10 col-md-offset-1">
@@ -20,53 +19,28 @@
 
             <div class="card-block-1">
                 <!--Name-->
-                <h4 class="card-title">Tajul Islam Jony</h4>
-                <h4>1301020020</h4>
-                <h4>tajul.cse2015@gmail.com</h4>
+                <h4 class="card-title">{{ $author->name }}</h4>
+                <h4>{{ $author->student_id }}</h4>
+                <h4>{{ $author->email }}</h4>
                 <!--Quotation-->
             </div>
             <hr>
             <div style="text-align: center;" class="rate">
-            	<h2><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> 4.5 </i></span></h2>
+              <h2><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> {{ $author->rating }} </i></span></h2>
             </div>
             
             <div style="text-align: center; margin-top: 20px;">
-              <h2 ><span class="label label-md label-primary"> Total Post(s): 10 </span></h2>
+              <h2 ><span class="label label-md label-primary"> Total Post(s): {{$totalPost}} </span></h2>
             </div>
-            	
+              
               <hr>
 
             <div class="card-footer">
-               <button style="margin-left: 400px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever=""><i class="fa fa-send" aria-hidden="true"> Send Message </i></button>
-
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <label for="message-text" class="form-control-label">Message:</label>
-                            <textarea class="form-control" id="message-text" style="height: 100px;" "></textarea>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary"><i class="fa fa-send" aria-hidden="true"> Send message </i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               <a href="{{ route('message', $author->id) }}"><button style="margin-left: 400px;" type="button" class="btn btn-primary" d><i class="fa fa-send" aria-hidden="true"> Send Message </i></button></a>
             </div>
         </div>
         <!--/.Card-->
     </div>
   </div>
-
 
 @endsection
