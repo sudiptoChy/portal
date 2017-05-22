@@ -44,7 +44,8 @@
 
           </div>
           <hr>
-            
+          
+          @if(Auth::check())
           <div class="rate">
           <form method="post" action="{{ route('post.rating',['post_id' => $post->id, 'user_id'=> $userID ]) }}">
             <div class="pull-right">
@@ -74,6 +75,7 @@
                <h4 style="margin-top: 1px; margin-right: 7px; margin-bottom: 2px;"><span class="label label-md label-primary"><i class="fa fa-star" aria-hidden="true"> {{ number_format($postRating, 1, '.', ',') }} </i></span></h4>
             </div>
           </div>
+          @endif
 
           </form>
 
@@ -85,6 +87,8 @@
       </div>
     </div>
   </div>
+
+  @if(Auth::check())
 
   <div style="margin-top: 20px;" class="row">
   <div class="col-md-10 col-md-offset-1">
@@ -108,6 +112,8 @@
        </form>
       </div>
       </div>
+
+  @endif
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
