@@ -168,7 +168,7 @@
             <!--Content-->
             <div class="card-block">
                 <h4>Mohsin Ahmed</h4>
-                <p style="text-align:center;">Database Expert</p>
+                <p style="text-align:center;">Front-end designer</p>
                 <!--Triggering button-->
                 <a class="rotate-btn-4" data-card="card-1"><i class="fa fa-repeat"></i>View More</a>
             </div>
