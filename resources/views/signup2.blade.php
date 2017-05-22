@@ -35,6 +35,11 @@
               <input placeholder="{{ $birthday }}" value="{{ $birthday }}" readonly style="border: 1px solid #66afe9; width: 99%;" name="birthday" class="form-control" required="true">
             </div>
 
+            <div class="form-group">
+              <label name="title">Department:</label>
+              <input placeholder="{{ $dep }}" value="{{ $dep }}" style="border: 1px solid #66afe9; width: 99%;" name="dep" readonly class="form-control">
+            </div>
+
              <div class="form-group">
               <label name="title">Your Email:</label>
               <input style="border: 1px solid #66afe9; width: 99%;" name="email" class="form-control" placeholder="Enter your email" required="true">

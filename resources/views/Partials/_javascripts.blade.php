@@ -202,9 +202,7 @@ $('#submit').click(function(e){
                 data: {'datas': data, '_token': token, 'dob' : dob},
                 success: function(r) {
                   var link = document.createElement('a');
-                  link.href = redirectUrl.replace('#data#', r.name + '+' + r.dob + '+' + r.id);
-
-                  // console.log(link)
+                  link.href = redirectUrl.replace('#data#', r.name + '+' + r.dob + '+' + r.id + '+' + r.dep);
                   document.body.appendChild(link);
                   link.click();
                 }

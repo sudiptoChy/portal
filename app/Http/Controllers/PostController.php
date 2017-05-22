@@ -52,6 +52,13 @@ class PostController extends Controller
     public function getShow($slug)
     {
         $post = $this->post->where('slug', '=', $slug)->with('user', 'category', 'comments')->first();
+        $commentators = [];
+
+        foreach($post->comments as $comment) {
+            $user = $this->user->find($comment->user_id);
+            $commentators[$user->avatar] = $comment->comment;
+        }
+
         $totalComments = count($post->comments);
         $userID = Auth::user()->id;
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
@@ -60,11 +67,13 @@ class PostController extends Controller
         $fileName = $post->file;
         $file = "files/".$fileName;
 
-        //$this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
-
+        if(Auth::check()) {
+            $this->updateUserRating($post->id, $postRating);  // Updating User Rating by this post
+        }
+        
         foreach($ratedUser as $user)
         {
-            if($user == $userID) $canRate = false;
+            if($user == $userID || $user == Auth::user()->id) $canRate = false;
         }
 
        $data = [
@@ -73,7 +82,8 @@ class PostController extends Controller
             'postRating' => $postRating,
             'canRate' => $canRate,
             'file' => $file,
-            'totalComments' => $totalComments
+            'totalComments' => $totalComments,
+            'commentators' => $commentators
         ];
 
     	return view('Post.show')->with($data);
@@ -249,11 +259,11 @@ class PostController extends Controller
     {
         $post = $this->post->find($id);
         $post->tags()->detach();
-        Storage::delete($post->image);
+        //Storage::delete($post->image);
 
         $post->delete();
 
-        return redirect()->route('home');
+        return redirect()->route('showPostsByUser');
     }
 
     public function getDownloadFile($post_id)
@@ -265,5 +275,28 @@ class PostController extends Controller
  
         return (new Response($file, 200))
               ->header('Content-Type', ".pdf");
+    }
+
+    public function showPostsByUser($id) {
+        $postsByUser = $this->user->with('posts')->find($id);
+        return view('myPosts')->with('postsByUser', $postsByUser);
+    }
+
+    public function showPopularPosts() {
+        $posts = $this->post->with('user')->latest()->paginate(5);
+        $PostByRating = $this->post->with('user')->orderBy('rating', 'DSC')->take(5)->get();
+        $categories = $this->category->all();
+        $tags = $this->tag->all();
+        $UserByRating = $this->user->orderBy('rating', 'DSC')->take(5)->get();
+
+        $data = [
+          'posts' => $posts,
+          'tags' => $tags,
+          'categories' => $categories,
+          'PostByRating' => $PostByRating,
+          'UserByRating' => $UserByRating
+        ];
+
+        return view('popularposts')->with($data);
     }
 }
