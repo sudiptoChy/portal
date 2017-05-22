@@ -133,8 +133,7 @@
             <!--Content-->
             <h4>About me</h4>
             <hr>
-            <p> “I am not a Sunday morning inside four walls with clean blood and organized drawers. I am the hurricane setting fire to the forests at night when no one else is alive or awake however you choose to see it and I live in my own flames sometimes burning too bright and too wild to make things last or handle myself or anyone else and so I run. run run run far and wide until my bones ache and lungs split and it feels good. Hear that people? It feels good because I am the slave and ruler of my own body and I wish to do with it exactly as I please” </p>
-            <hr>
+            <p> “I know I'm not a perfect boy but I'm trying my best to make my parents proud I wanna be rich and successful and work for my money and not given it. That way I can be proud of myself” </p>
             <!--Social Icons-->
             <ul class="inline-ul">
                 <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
