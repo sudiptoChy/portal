@@ -34,17 +34,14 @@
 
 <body style="background: #fafafa;">
 
-    <div class="container">
-    <div class="row">
-    <div class="col-xs-3">
-        <i style="margin-left: 530px; margin-top: 40px; color: #333;" class="fa fa-user fa-5x"></i>
-        <h3 style="color: #333; margin-left: 460px; font-size: 20px; width: 300px;">Sign in to Admin Panel</h3>
-    </div>
-    </div>
-    </div>
-
 
     <div class="container">
+      <div class="row">
+        <div class="col-xs-3">
+            <i style="margin-left: 530px; margin-top: 40px; color: #333;" class="fa fa-user fa-5x"></i>
+            <h3 style="color: #333; margin-left: 460px; font-size: 20px; width: 300px;">Sign in to Admin Panel</h3>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
         
