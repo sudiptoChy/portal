@@ -181,7 +181,7 @@
             <!--Content-->
             <h4>About me</h4>
             <hr>
-            <p>Hi, this is Mohsin Ahmed. I am a Front-End Developer. I like most Cricket game. </br> https://www.facebook.com/mohsin.ahmed.5055 </p>
+            <p>Hi, this is Mohsin Ahmed. I am a Front-End Developer. I like most Cricket games. </p>
             <hr>
             <!--Social Icons-->
             <ul class="inline-ul">
