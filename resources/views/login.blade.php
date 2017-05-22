@@ -49,7 +49,7 @@
         <div style="border-radius: 5px; background: #f9f9f9; margin-top: -50px; height: 60px; margin-left: -10px;" class="card">
         <div class="card-block">
          <h5 style="padding-top: 22px; padding-left: 74px; color: #24292e;">New to ResearchPortal?</h5>
-         <a style="float:right; margin-top: -34px; padding-right: 76px; color: #0366d6; font-weight: normal;" href="">Create an account</a>
+         <a style="float:right; margin-top: -34px; padding-right: 76px; color: #0366d6; font-weight: normal;" href="{{ route('user.register') }}">Create an account</a>
        </div>
 
     </div>
