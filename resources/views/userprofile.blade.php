@@ -41,6 +41,12 @@
                         <td>Date of Birth:</td>
                         <td>{{ $user->birthday }}</td>
                       </tr>
+
+                      <tr>
+                        <td>Department:</td>
+                        <td>{{ $user->department }}</td>
+                      </tr>
+
                       <tr>
                         <td>Email:</td>
                         <td>{{ $user->email }}</td>
