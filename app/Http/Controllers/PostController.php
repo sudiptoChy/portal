@@ -68,6 +68,8 @@ class PostController extends Controller
         }
         
         $postRating = PostRate::where('post_id', '=', $post->id)->pluck('rating')->avg();
+        $post->rating = $postRating;
+        $post->save();
         $ratedUser = PostRate::where('post_id', '=', $post->id)->pluck('user_id');
         $canRate = true;
         $fileName = $post->file;
