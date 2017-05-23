@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\TeacherRequest;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Student;
 use App\User;
@@ -59,5 +60,17 @@ class RegisterController extends Controller
 
             return redirect()->route('user.login');
         }
+    }
+
+    public function registerTeacher(TeacherRequest $request) {
+
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->department = $request->department;
+            $user->password = bcrypt($request->password);
+
+            $user->save();
+            return redirect()->route('admin.users');
     }
 }

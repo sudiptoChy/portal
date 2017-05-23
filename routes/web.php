@@ -16,6 +16,7 @@
 Route::get('/auth/register', 'RegisterController@showRegistrationForm')->name('user.register');
 Route::post('/auth/register/check', 'RegisterController@checkUser')->name('user.register-check');
 Route::post('/auth/register/student', 'RegisterController@register')->name('student.register');
+Route::post('register/teacher', 'RegisterController@registerTeacher')->name('teacher.register');
 
 Route::get('/auth/register/student/{data}', function($data){
 	$data = explode('+',$data);
@@ -53,7 +54,7 @@ Route::get('/user/profile', 'ProfileController@getIndex')->name('user.profile');
 Route::post('/user/update/avatar', 'ProfileController@updateAvatar')->name('update.avatar');
 Route::get('/user/message', 'ProfileController@getMessage')->name('user.message');
 Route::get('/user/message/view/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_show');
-Route::post('/user/message/reply/{msg_id}', 'ProfileController@getShowMessage')->name('user.message_reply');
+Route::post('/user/message/reply/{user_id}', 'ProfileController@postMessageReply')->name('user.message_reply');
 
 //EditProfile Route
 
@@ -118,4 +119,4 @@ Route::post('/admin/tag/store', 'AdminController@tagStore')->name('admin.tag_sto
 Route::post('/admin/category/update/{id}', 'AdminController@updateCategory')->name('admin.category_update');
 Route::post('/admin/tag/update/{id}', 'AdminController@updateTag')->name('admin.tag_update');
 Route::get('/admin/category/delete/{id}', 'AdminController@destroyCategory')->name('admin.category_delete');
-Route::get('/admin/login', 'AdminController@getAdmin');
+Route::get('/admin', 'AdminController@getAdmin')->name('admin.login');

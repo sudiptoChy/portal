@@ -21,14 +21,6 @@
         <a href="{{route('user.message')}}" class=""> 
         <i style="color: white;" class="fa fa-envelope-o"> (@yield('totalMessage'))</i></a>
         </li>
-          <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"> (@yield('totalNotification'))</i> <b class="caret"></b></a>
-                <ul class="dropdown-menu alert-dropdown">
-                    <li>
-                        <a class="fa fa-bell" style="padding: 10px;" href="#">Mohsin Ahmed commented in your post</a>
-                    </li>
-                </ul>
-          </li>
         <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/uploads/avatars/{{Auth::user()->avatar}}" class="img-circle" alt="images"></a>
                   <ul class="dropdown-menu">
@@ -47,11 +39,11 @@
           </li>
       </ul>
       <form action="" class="search-form">
-                <div class="form-group has-feedback">
-                <label for="search" class="sr-only">Search</label>
-                <input type="text" class="form-control" name="search" id="search">
-                  <span class="fa fa-search form-control-feedback"></span>
-              </div>
+          <div class="form-group has-feedback">
+              <label for="search" class="sr-only">Search</label>
+              <input type="text" class="form-control" name="search" id="search">
+                <span class="fa fa-search form-control-feedback"></span>
+          </div>
       </form>
       <!--  <hr class="upper">  -->
        <h3>Research Portal</h3>

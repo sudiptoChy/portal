@@ -121,15 +121,18 @@
                        <h2 style="text-align: center;">Teacher's Registration</h2>
                           <div class="panel panel-default">
                             <div class="panel-body">
-                                <form class="form-group">
-                                    <label>Firstname:</label>
-                                    <input type="text" name="firstname" class="form-control">
-                                    <label>Lastname:</label>
-                                    <input type="text" name="lastname" class="form-control">
+                                <form class="form-group" action="{{route('teacher.register')}}" method="POST">
+                                    <label>Name:</label>
+                                    <input type="text" name="name" class="form-control" required="true">
                                     <label>Email:</label>
-                                    <input type="email" name="email" class="form-control">
+                                    <input type="email" name="email" class="form-control" required="true">
+                                    <label>Department:</label>
+                                    <input type="text" name="department" class="form-control" required="true">
                                     <label>Password:</label>
-                                    <input type="password" name="password" class="form-control">
+                                    <input type="password" name="password" class="form-control" required="true">
+                                    <label>Confirm Password:</label>
+                                    <input type="password" name="password_confirmation" class="form-control" required="true">
+                                    {{csrf_field()}}
                                     <button class="btn btn-primary" style="margin-top: 10px; width: 100%;">Submit</button>
                                 </form>
                             </div>

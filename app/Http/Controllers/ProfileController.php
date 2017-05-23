@@ -60,6 +60,29 @@ class ProfileController extends Controller
         return view('message')->with('messages', $messages);
     }
 
+    public function getShowMessage($msg_id) {
+        $message = Message::with('user')->find($msg_id);
+        $message->status = 1;
+        $message->save();
+
+        return view('show_message')->with('message', $message);
+    }
+
+    public function postMessageReply(Request $request, $id)
+    {
+        $message = new Message;
+
+        $message->to_user_id = $id;
+        $message->from_user_id = Auth::user()->id;
+        $message->body = $request->message;
+        $message->status = 0;
+
+        $message->save();
+
+        Session:: flash('success', 'Message sent successfully!');
+        return redirect()->back();
+    }
+
     public function showAuthor(){
 
     	return view('author');

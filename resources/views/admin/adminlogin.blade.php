@@ -49,8 +49,6 @@
         <div class="card-block">
 
         <!--Body-->
-
-        <form method="POST" action="">
             <div class="form-group">
               <label style="margin-left: 70px; font-size: 15px; color: #24292e; font-weight: bold;" name="title">UserName</label>
               <input style="border: 1px solid #66afe9; width: 64%; margin-left: 70px; border-radius: 5px;" name="name" class="form-control">
@@ -62,12 +60,8 @@
             </div>
 
             <div class="text-center">
-            <a href=""><button class="btn btn-success" style="width: 64%; height: 40px; margin-left: 7px; border-radius: 5px;">Login</button></a>
+            <a href="{{route('admin.index')}}"><button class="btn btn-success" style="width: 64%; height: 40px; margin-left: 7px; border-radius: 5px;">Login</button></a>
             </div>
-
-            {{ csrf_field() }}
-
-        </form>
     </div>
 </div>
 <!--/Form without header-->

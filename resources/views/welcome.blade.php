@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="name">
-                          <p>Jaber Ahmed</p>
+                          <p>{{$post->user->name}}</p>
                         </div>
                       </div>
                     @endforeach

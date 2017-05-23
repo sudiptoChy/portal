@@ -117,7 +117,7 @@ class PostController extends Controller
 
         $this->validate($request, array(
           'title' => 'required|max:255',
-          'category_id' => 'required|integer',-
+          'category_id' => 'required|integer',
           'body'  => 'required',
           'feature-image' => 'sometimes|image',
           'attached_file' => 'sometimes|mimes:doc,pdf,docx,zip'

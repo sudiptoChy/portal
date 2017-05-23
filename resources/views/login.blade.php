@@ -21,7 +21,7 @@
 
         <form method="POST" action="{{ route('login') }}">
             <div class="form-group">
-              <label style="margin-left: 80px; font-size: 15px; color: #24292e; font-weight: bold;" name="title">Your Id</label>
+              <label style="margin-left: 80px; font-size: 15px; color: #24292e; font-weight: bold;" name="title">Your Id/ Email(Teacher)</label>
               <input style="border: 1px solid #66afe9; width: 64%; margin-left: 80px; border-radius: 5px;" name="id" class="form-control">
             </div>
 
