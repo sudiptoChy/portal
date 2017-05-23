@@ -129,4 +129,9 @@ class AdminController extends Controller
     {
     	return view('admin.adduser');
     }
+
+    public function getAdmin()
+    {
+        return view('admin.adminlogin');
+    }
 }
