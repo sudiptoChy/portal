@@ -70,7 +70,7 @@ Route::post('/author/message/{id}', 'HomeController@postMessage')->name('message
 
 //Change password Route
 
-Route::get('/user/profile/changepass', 'ProfileController@editPass')->name('password.change');
+Route::post('/user/profile/changepass/{id}', 'ProfileController@postUpdatePassword')->name('password.change');
 
 
 // Post Routes

@@ -28,37 +28,38 @@
                 </div>
 
               <div class="col-md-8">
-                <form method="POST" action="">
+                <form method="POST" action="{{route('password.change', Auth::user()->id)}}">
                   <div class="form-group">
                     <div class="row">
-                      <div class="col-md-12">
-                          <div class="col-sm-2">
-                            <label style="margin-top: 15px;" class="label-control">Name:</label>
-                          </div>
-                          <div class="col-sm-10">
-                            <input type="text" name="name" class="form-control" placeholder="Jaber Ahmed">
-                          </div>
-
-                          <div class="col-sm-2">
-                            <label style="margin-top: 15px;" class="label-control">Name:</label>
-                          </div>
-                          <div class="col-sm-10">
-                            <input type="text" name="name" class="form-control" placeholder="Jaber Ahmed">
+                   <div class="col-md-12">
+                          <!-- <div class="col-sm-4">
+                            <label style="margin-top: 15px;" class="label-control">Old Password:</label>
+                          </div> -->
+                          <div style="margin-top: 25px;" class="md-form col-sm-8">
+                          <i class="fa fa-lock prefix"></i>
+                            <input type="Password" name="old_password" class="form-control" placeholder="Old password">
                           </div>
 
-                          <div class="col-sm-2">
-                            <label style="margin-top: 15px;" class="label-control">Name:</label>
-                          </div>
-                          <div class="col-sm-10">
-                            <input type="text" name="name" class="form-control" placeholder="Jaber Ahmed">
+                          <!-- <div class="col-sm-4">
+                            <label style="margin-top: 15px;" class="label-control">New Password:</label>
+                          </div> -->
+                          <div class="md-form col-sm-8">
+                          <i class="fa fa-lock prefix"></i>
+                            <input type="password" name="password" class="form-control" placeholder="New password">
                           </div>
 
-                          <div class="col-md-10 col-md-offset-2">
+                          <!-- <div class="col-sm-4">
+                            <label style="margin-top: 15px;" class="label-control">Confirm Password:</label>
+                          </div> -->
+                          <div class="md-form col-sm-8">
+                          <i class="fa fa-lock prefix"></i>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password">
+                            {{csrf_field()}}
+                          </div>
+
+                          <div class="col-md-10 col-md-offset-1">
                             <button class="btn btn-success"> Update</button>
-                            <button class="btn btn-primary"> Back</button>
-                          
-                          <a style="margin-bottom: 5px;" href="{{ route('password.change') }}" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-md btn-default">Change Password</a>
-
+                            <a href="{{route('user.profile')}}" class="btn btn-primary">Back</a>
                           </div>
                       </div>
                     </div>
