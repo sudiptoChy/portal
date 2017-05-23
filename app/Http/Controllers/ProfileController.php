@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserPasswordRequest;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Message;
 use App\User;
 use Session;
@@ -35,9 +37,20 @@ class ProfileController extends Controller
           return view('editprofile', array('user' => Auth::user()));
         }
     }
-    public function editPass(){
+    public function postUpdatePassword(UserPasswordRequest $request, $id)
+    {
+            $user = User::find($id);
+            $hashedPassword = $user->password;
 
-    	return view('changepass');
+            if (Hash::check($request->old_password, $hashedPassword)) {
+                $user->password = bcrypt($request->password);
+                $user->save();
+                Session::flash('success', 'password updated successfully!');
+                return redirect()->route('profile.edit');
+            } else { 
+                Session::flash('danger', 'Old password is not correct!');
+                return redirect()->back();
+            }
     }
 
     public function getMessage()
