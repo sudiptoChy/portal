@@ -47,12 +47,12 @@
 
              <div class="form-group">
               <label name="title">Password:</label>
-              <input style="border: 1px solid #66afe9; width: 99%;" name="password" class="form-control" placeholder="Enter your password" type="password" required="true">
+              <input style="border: 1px solid #66afe9; width: 95%;" name="password" class="form-control" placeholder="Enter your password" type="password" required="true">
             </div>
 
              <div class="form-group">
               <label name="title">Confirm Password:</label>
-              <input style="border: 1px solid #66afe9; width: 99%;" name="password_confirmation" class="form-control" placeholder="Confirm your password" type="password" required="true">
+              <input style="border: 1px solid #66afe9; width: 95%;" name="password_confirmation" class="form-control" placeholder="Confirm your password" type="password" required="true">
             </div>
 
             <div class="text-center">
